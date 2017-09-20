@@ -7,11 +7,11 @@
 - Os acontecimentos no ambiente serão medidos por ciclos.
 - Um ciclo corresponde a uma atualização completa de todos os agentes do ambiente uma vez (abordagem sequencial).
 
-A – Agente Reciclador de Lixo
-Lo – Lixeira de Lixo Orgânico
-Ls – Lixeira de Lixo Seco
-O – Lixo Orgânico
-S – Lixo Seco
+**A** – Agente Reciclador de Lixo<br>
+**Lo** – Lixeira de Lixo Orgânico<br>
+**Ls** – Lixeira de Lixo Seco<br>
+**O** – Lixo Orgânico<br>
+**S** – Lixo Seco<br>
 
 Coexistem nesse ambiente:
 ### Agente Reciclador de Lixo (A)
