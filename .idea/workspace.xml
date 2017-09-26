@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3734b9cd-ca2f-4227-b493-46a80e09bc76" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts.js" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/public/index.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/style.css" afterPath="$PROJECT_DIR$/public/style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/agentes-recicladores-de-lixo-autonomos.iml" afterPath="$PROJECT_DIR$/.idea/agentes-recicladores-de-lixo-autonomos.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/Environment.js" afterPath="$PROJECT_DIR$/app/models/Environment.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -44,8 +39,8 @@
       <file leaf-file-name="Environment.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/models/Environment.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="39" column="0" lean-forward="true" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+            <state relative-caret-position="221">
+              <caret line="31" column="0" lean-forward="true" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
               <folding>
                 <element signature="e#0#28#0" expanded="true" />
               </folding>
@@ -231,12 +226,12 @@
       <updated>1505863912004</updated>
       <workItem from="1505863913402" duration="1692000" />
       <workItem from="1506429367865" duration="3103000" />
-      <workItem from="1506432483712" duration="17056000" />
+      <workItem from="1506432483712" duration="17448000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="21851000" />
+    <option name="totallyTimeSpent" value="22243000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="260" y="20" width="1920" height="1026" extended-state="6" />
@@ -746,8 +741,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/models/Environment.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="39" column="0" lean-forward="true" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+        <state relative-caret-position="221">
+          <caret line="31" column="0" lean-forward="true" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
           <folding>
             <element signature="e#0#28#0" expanded="true" />
           </folding>

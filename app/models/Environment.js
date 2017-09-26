@@ -7,6 +7,10 @@ export default class Environment {
         this.size = size;
         this.fields = Array(size * size).fill(new Field(undefined, undefined, undefined, undefined));
 
+        const getCoordenate = (row, col) => {
+            return ((row + 1) * this.size) - (this.size - (col + 1)) -1;
+        };
+
         let row = 0;
         let col = 0;
         let top, left, bottom, right;
@@ -19,19 +23,19 @@ export default class Environment {
             right = null;
 
             if (row !== 0) {
-                top = this.getCoordenate(row - 1, col);
+                top = getCoordenate(row - 1, col);
             }
 
             if (row !== this.size - 1) {
-                bottom = this.getCoordenate(row + 1, col);
+                bottom = getCoordenate(row + 1, col);
             }
 
             if (col !== 0) {
-                left = this.getCoordenate(row, col - 1);
+                left = getCoordenate(row, col - 1);
             }
 
             if (col !== this.size - 1) {
-                right = this.getCoordenate(row, col + 1);
+                right = getCoordenate(row, col + 1);
             }
 
             // seta posiçoes no campo
@@ -49,9 +53,5 @@ export default class Environment {
                 col = 0;
             }
         });
-    }
-
-    getCoordenate(row, col) {
-        return ((row + 1) * this.size) - (this.size - (col + 1)) -1;
     }
 }
