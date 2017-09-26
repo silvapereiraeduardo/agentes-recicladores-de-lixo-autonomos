@@ -1,0 +1,27 @@
+{
+  "name": "agentes-recicladores-de-lixo-autonomos",
+  "version": "1.0.0",
+  "description": "agentes",
+  "main": "app.js",
+  "scripts": {
+    "webpack": "webpack",
+    "start": "webpack-dev-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/eduardosilvapereira/agentes-recicladores-de-lixo-autonomos.git"
+  },
+  "author": "Eduardo Pereira",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/eduardosilvapereira/agentes-recicladores-de-lixo-autonomos/issues"
+  },
+  "homepage": "https://github.com/eduardosilvapereira/agentes-recicladores-de-lixo-autonomos#readme",
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-es2015": "^6.24.1",
+    "webpack": "^3.6.0",
+    "webpack-dev-server": "^2.8.2"
+  }
+}

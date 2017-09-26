@@ -2,6 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3734b9cd-ca2f-4227-b493-46a80e09bc76" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts.js" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/public/index.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/style.css" afterPath="$PROJECT_DIR$/public/style.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/agentes-recicladores-de-lixo-autonomos.iml" afterPath="$PROJECT_DIR$/.idea/agentes-recicladores-de-lixo-autonomos.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -15,42 +20,74 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/index.html">
+        <entry file="file://$PROJECT_DIR$/public/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="1" column="10" lean-forward="true" selection-start-line="1" selection-start-column="10" selection-end-line="1" selection-end-column="10" />
+            <state relative-caret-position="221">
+              <caret line="13" column="7" lean-forward="false" selection-start-line="13" selection-start-column="7" selection-end-line="13" selection-end-column="7" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="129">
-              <caret line="13" column="21" lean-forward="false" selection-start-line="13" selection-start-column="21" selection-end-line="13" selection-end-column="21" />
+            <state relative-caret-position="238">
+              <caret line="14" column="21" lean-forward="true" selection-start-line="14" selection-start-column="21" selection-end-line="14" selection-end-column="21" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/style.css">
+      <file leaf-file-name="Environment.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/models/Environment.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="357">
+              <caret line="39" column="0" lean-forward="true" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#28#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Field.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/models/Field.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="7" column="1" lean-forward="true" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="scripts.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/scripts.js">
+      <file leaf-file-name="Agent.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/models/Agent.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <caret line="0" column="28" lean-forward="true" selection-start-line="0" selection-start-column="28" selection-end-line="0" selection-end-column="28" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Trash.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/models/Trash.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="4" column="2" lean-forward="true" selection-start-line="4" selection-start-column="2" selection-end-line="4" selection-end-column="2" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="App.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/App.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="34">
+              <caret line="2" column="29" lean-forward="false" selection-start-line="2" selection-start-column="29" selection-end-line="2" selection-end-column="29" />
               <folding />
             </state>
           </provider>
@@ -58,15 +95,36 @@
       </file>
     </leaf>
   </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>tipe</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>tipe</replace>
+      <replace>type</replace>
+    </replaceStrings>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/scripts.js" />
+        <option value="$PROJECT_DIR$/app/models/agent.js" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/app/models/Trash.js" />
+        <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/.babelrc" />
+        <option value="$PROJECT_DIR$/app/index.js" />
+        <option value="$PROJECT_DIR$/public/index.html" />
+        <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/gulpfile.js" />
+        <option value="$PROJECT_DIR$/webpack.config.js" />
+        <option value="$PROJECT_DIR$/app/models/Agent.js" />
+        <option value="$PROJECT_DIR$/app/models/Field.js" />
+        <option value="$PROJECT_DIR$/app/App.js" />
+        <option value="$PROJECT_DIR$/app/models/Environment.js" />
       </list>
     </option>
   </component>
@@ -76,11 +134,14 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
+  <component name="NodeModulesDirectoryManager">
+    <handled-path value="$PROJECT_DIR$/node_modules" />
+  </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="10" />
+    <option name="x" value="260" />
     <option name="y" value="20" />
-    <option name="width" value="1346" />
-    <option name="height" value="728" />
+    <option name="width" value="1400" />
+    <option name="height" value="986" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="1" id="Add" />
@@ -100,6 +161,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -107,18 +169,43 @@
               <item name="agentes-recicladores-de-lixo-autonomos" type="b2602c69:ProjectViewProjectNode" />
               <item name="agentes-recicladores-de-lixo-autonomos" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="agentes-recicladores-de-lixo-autonomos" type="b2602c69:ProjectViewProjectNode" />
+              <item name="agentes-recicladores-de-lixo-autonomos" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="agentes-recicladores-de-lixo-autonomos" type="b2602c69:ProjectViewProjectNode" />
+              <item name="agentes-recicladores-de-lixo-autonomos" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="models" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="agentes-recicladores-de-lixo-autonomos" type="b2602c69:ProjectViewProjectNode" />
+              <item name="agentes-recicladores-de-lixo-autonomos" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
       <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../oe/projects/labellamafia" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
+    <property name="nodejs_interpreter_path" value="/usr/bin/node" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/models" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -143,31 +230,33 @@
       <option name="presentableId" value="Default" />
       <updated>1505863912004</updated>
       <workItem from="1505863913402" duration="1692000" />
+      <workItem from="1506429367865" duration="3103000" />
+      <workItem from="1506432483712" duration="17056000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1692000" />
+    <option name="totallyTimeSpent" value="21851000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="10" y="20" width="1366" height="732" extended-state="6" />
+    <frame x="260" y="20" width="1920" height="1026" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24944155" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24934107" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32838285" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23555556" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -182,18 +271,58 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/style.css">
+    <entry file="file://$PROJECT_DIR$/public/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="102">
+          <caret line="6" column="0" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
+    <entry file="file://$PROJECT_DIR$/gulpfile.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
+        <state relative-caret-position="289">
+          <caret line="17" column="3" lean-forward="true" selection-start-line="17" selection-start-column="3" selection-end-line="17" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/App.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="21" lean-forward="true" selection-start-line="1" selection-start-column="21" selection-end-line="1" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/Agent.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="5" lean-forward="true" selection-start-line="3" selection-start-column="5" selection-end-line="3" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="629">
+          <caret line="37" column="56" lean-forward="false" selection-start-line="37" selection-start-column="56" selection-end-line="37" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
           <caret line="1" column="10" lean-forward="true" selection-start-line="1" selection-start-column="10" selection-end-line="1" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -208,9 +337,420 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="129">
+        <state relative-caret-position="221">
           <caret line="13" column="21" lean-forward="false" selection-start-line="13" selection-start-column="21" selection-end-line="13" selection-end-column="21" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://JavaScript-modules-diagram//home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JavaScript-modules-diagram</ID>
+          <OriginalElement>$PROJECT_DIR$</OriginalElement>
+          <nodes>
+            <node x="0.0" y="1188.0">$PROJECT_DIR$/app/models/Agent.js</node>
+            <node x="680.0" y="353.0">$PROJECT_DIR$/node_modules/gulp/lib/completion.js#fs#19;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/lib/completion.js#path#43;</node>
+            <node x="284.0" y="359.0">$PROJECT_DIR$/node_modules/gulp/bin/gulp.js#Liftoff#208;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#archy#178;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#argv#395;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#chalk#116;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#cliPackage#884;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#completion#348;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#env.configPath#3146;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#gulpInst#3249;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#gutil#39;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#interpret#276;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#prettyTime#73;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#semver#146;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#taskTree#450;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#tildify#242;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#v8flags#314;</node>
+            <node x="937.0" y="543.0">$PROJECT_DIR$/gulpfile.js#gulp#6;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/gulpfile.js#webserver#36;</node>
+            <node x="53.0" y="965.0">$PROJECT_DIR$/index.html</node>
+            <node x="1166.0" y="143.0">$PROJECT_DIR$/node_modules/gulp-webserver/src/index.js#connect#131;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#connectLivereload#208;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#enableMiddlewareShorthand#551;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#extend#514;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#fs#367;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#gutil#39;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#http#73;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#https#101;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#isarray#623;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#open#460;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#path#432;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#proxy#263;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#serveIndex#391;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#serveStatic#165;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#through#4;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#tinyLr#304;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#url#488;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#watch#337;</node>
+            <node x="750.0" y="587.0">$PROJECT_DIR$/node_modules/gulp/index.js#Orchestrator#47;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/index.js#deprecated#125;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/index.js#gutil#91;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/index.js#util#19;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/index.js#vfs#165;</node>
+            <node x="53.0" y="1066.0">$PROJECT_DIR$/app/index.js#Agent#7;</node>
+            <node x="1137.0" y="708.0">$PROJECT_DIR$/node_modules/gulp-webserver/node_modules/gulp-util/index.js</node>
+            <node x="823.0" y="118.0">$PROJECT_DIR$/node_modules/gulp-webserver/src/enableMiddlewareShorthand/index.js#extend#4;</node>
+            <node x="503.0" y="320.0">$PROJECT_DIR$/node_modules/gulp/package.json</node>
+            <node x="107.0" y="882.0">$PROJECT_DIR$/style.css</node>
+            <node x="0.0" y="545.0">$PROJECT_DIR$/node_modules/gulp/lib/taskTree.js</node>
+            <node x="1242.0" y="0.0">$PROJECT_DIR$/node_modules/gulp-webserver/node_modules/through2/through2.js</node>
+            <node x="452.0" y="780.0">archy</node>
+            <node x="419.0" y="288.0">chalk</node>
+            <node x="1474.0" y="561.0">connect</node>
+            <node x="1084.0" y="45.0">connect-livereload</node>
+            <node x="686.0" y="516.0">deprecated</node>
+            <node x="210.0" y="797.0">env.configPath</node>
+            <node x="511.0" y="709.0">env.modulePath</node>
+            <node x="891.0" y="397.0">fs</node>
+            <node x="611.0" y="605.0">gulp-util</node>
+            <node x="1301.0" y="654.0">http</node>
+            <node x="1362.0" y="72.0">https</node>
+            <node x="347.0" y="807.0">interpret</node>
+            <node x="1543.0" y="400.0">isarray</node>
+            <node x="90.0" y="423.0">liftoff</node>
+            <node x="137.0" y="726.0">minimist</node>
+            <node x="1042.0" y="121.0">node.extend</node>
+            <node x="1112.0" y="628.0">open</node>
+            <node x="805.0" y="495.0">orchestrator</node>
+            <node x="876.0" y="307.0">path</node>
+            <node x="98.0" y="336.0">pretty-hrtime</node>
+            <node x="1378.0" y="646.0">proxy-middleware</node>
+            <node x="322.0" y="263.0">semver</node>
+            <node x="1538.0" y="290.0">serve-index</node>
+            <node x="1460.0" y="132.0">serve-static</node>
+            <node x="108.0" y="640.0">tildify</node>
+            <node x="1483.0" y="219.0">tiny-lr</node>
+            <node x="978.0" y="250.0">url</node>
+            <node x="895.0" y="775.0">util</node>
+            <node x="227.0" y="286.0">v8flags</node>
+            <node x="741.0" y="776.0">vinyl-fs</node>
+            <node x="1509.0" y="482.0">watch</node>
+          </nodes>
+          <notes />
+          <edges>
+            <edge source="$PROJECT_DIR$/gulpfile.js#gulp#6;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/gulpfile.js#webserver#36;" target="$PROJECT_DIR$/node_modules/gulp/index.js#Orchestrator#47;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/index.js#deprecated#125;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/index.js#gutil#91;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/index.js#util#19;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/index.js#vfs#165;">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+            <edge source="$PROJECT_DIR$/node_modules/gulp/bin/gulp.js#Liftoff#208;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#archy#178;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#argv#395;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#chalk#116;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#cliPackage#884;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#completion#348;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#env.configPath#3146;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#gulpInst#3249;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#gutil#39;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#interpret#276;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#prettyTime#73;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#semver#146;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#taskTree#450;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#tildify#242;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#v8flags#314;" target="$PROJECT_DIR$/node_modules/gulp/lib/taskTree.js">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+            <edge source="$PROJECT_DIR$/node_modules/gulp-webserver/src/index.js#connect#131;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#connectLivereload#208;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#enableMiddlewareShorthand#551;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#extend#514;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#fs#367;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#gutil#39;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#http#73;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#https#101;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#isarray#623;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#open#460;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#path#432;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#proxy#263;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#serveIndex#391;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#serveStatic#165;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#through#4;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#tinyLr#304;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#url#488;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#watch#337;" target="http">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+            <edge source="$PROJECT_DIR$/node_modules/gulp-webserver/src/index.js#connect#131;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#connectLivereload#208;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#enableMiddlewareShorthand#551;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#extend#514;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#fs#367;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#gutil#39;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#http#73;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#https#101;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#isarray#623;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#open#460;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#path#432;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#proxy#263;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#serveIndex#391;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#serveStatic#165;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#through#4;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#tinyLr#304;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#url#488;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#watch#337;" target="watch">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+            <edge source="$PROJECT_DIR$/node_modules/gulp/lib/completion.js#fs#19;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/lib/completion.js#path#43;" target="fs">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+            <edge source="$PROJECT_DIR$/node_modules/gulp/bin/gulp.js#Liftoff#208;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#archy#178;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#argv#395;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#chalk#116;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#cliPackage#884;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#completion#348;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#env.configPath#3146;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#gulpInst#3249;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#gutil#39;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#interpret#276;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#prettyTime#73;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#semver#146;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#taskTree#450;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#tildify#242;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#v8flags#314;" target="env.configPath">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+            <edge source="$PROJECT_DIR$/node_modules/gulp/bin/gulp.js#Liftoff#208;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#archy#178;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#argv#395;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#chalk#116;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#cliPackage#884;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#completion#348;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#env.configPath#3146;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#gulpInst#3249;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#gutil#39;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#interpret#276;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#prettyTime#73;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#semver#146;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#taskTree#450;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#tildify#242;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#v8flags#314;" target="liftoff">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+            <edge source="$PROJECT_DIR$/node_modules/gulp-webserver/src/index.js#connect#131;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#connectLivereload#208;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#enableMiddlewareShorthand#551;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#extend#514;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#fs#367;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#gutil#39;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#http#73;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#https#101;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#isarray#623;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#open#460;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#path#432;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#proxy#263;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#serveIndex#391;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#serveStatic#165;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#through#4;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#tinyLr#304;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#url#488;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#watch#337;" target="node.extend">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+            <edge source="$PROJECT_DIR$/node_modules/gulp/bin/gulp.js#Liftoff#208;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#archy#178;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#argv#395;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#chalk#116;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#cliPackage#884;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#completion#348;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#env.configPath#3146;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#gulpInst#3249;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#gutil#39;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#interpret#276;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#prettyTime#73;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#semver#146;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#taskTree#450;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#tildify#242;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#v8flags#314;" target="gulp-util">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+            <edge source="$PROJECT_DIR$/node_modules/gulp-webserver/src/index.js#connect#131;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#connectLivereload#208;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#enableMiddlewareShorthand#551;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#extend#514;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#fs#367;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#gutil#39;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#http#73;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#https#101;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#isarray#623;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#open#460;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#path#432;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#proxy#263;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#serveIndex#391;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#serveStatic#165;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#through#4;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#tinyLr#304;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#url#488;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#watch#337;" target="open">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+            <edge source="$PROJECT_DIR$/node_modules/gulp-webserver/src/enableMiddlewareShorthand/index.js#extend#4;" target="node.extend">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+            <edge source="$PROJECT_DIR$/node_modules/gulp/bin/gulp.js#Liftoff#208;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#archy#178;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#argv#395;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#chalk#116;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#cliPackage#884;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#completion#348;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#env.configPath#3146;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#gulpInst#3249;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#gutil#39;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#interpret#276;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#prettyTime#73;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#semver#146;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#taskTree#450;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#tildify#242;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#v8flags#314;" target="tildify">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+            <edge source="$PROJECT_DIR$/node_modules/gulp/bin/gulp.js#Liftoff#208;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#archy#178;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#argv#395;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#chalk#116;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#cliPackage#884;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#completion#348;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#env.configPath#3146;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#gulpInst#3249;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#gutil#39;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#interpret#276;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#prettyTime#73;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#semver#146;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#taskTree#450;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#tildify#242;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#v8flags#314;" target="interpret">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+            <edge source="$PROJECT_DIR$/index.html" target="$PROJECT_DIR$/style.css">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+            <edge source="$PROJECT_DIR$/node_modules/gulp/bin/gulp.js#Liftoff#208;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#archy#178;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#argv#395;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#chalk#116;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#cliPackage#884;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#completion#348;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#env.configPath#3146;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#gulpInst#3249;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#gutil#39;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#interpret#276;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#prettyTime#73;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#semver#146;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#taskTree#450;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#tildify#242;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#v8flags#314;" target="minimist">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+            <edge source="$PROJECT_DIR$/node_modules/gulp-webserver/src/index.js#connect#131;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#connectLivereload#208;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#enableMiddlewareShorthand#551;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#extend#514;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#fs#367;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#gutil#39;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#http#73;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#https#101;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#isarray#623;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#open#460;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#path#432;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#proxy#263;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#serveIndex#391;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#serveStatic#165;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#through#4;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#tinyLr#304;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#url#488;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#watch#337;" target="fs">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+            <edge source="$PROJECT_DIR$/node_modules/gulp/lib/completion.js#fs#19;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/lib/completion.js#path#43;" target="path">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+            <edge source="$PROJECT_DIR$/node_modules/gulp-webserver/src/index.js#connect#131;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#connectLivereload#208;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#enableMiddlewareShorthand#551;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#extend#514;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#fs#367;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#gutil#39;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#http#73;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#https#101;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#isarray#623;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#open#460;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#path#432;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#proxy#263;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#serveIndex#391;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#serveStatic#165;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#through#4;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#tinyLr#304;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#url#488;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#watch#337;" target="serve-static">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+            <edge source="$PROJECT_DIR$/index.html" target="$PROJECT_DIR$/app/index.js#Agent#7;">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+            <edge source="$PROJECT_DIR$/app/index.js#Agent#7;" target="$PROJECT_DIR$/app/models/Agent.js">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+            <edge source="$PROJECT_DIR$/node_modules/gulp/bin/gulp.js#Liftoff#208;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#archy#178;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#argv#395;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#chalk#116;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#cliPackage#884;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#completion#348;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#env.configPath#3146;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#gulpInst#3249;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#gutil#39;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#interpret#276;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#prettyTime#73;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#semver#146;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#taskTree#450;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#tildify#242;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#v8flags#314;" target="pretty-hrtime">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+            <edge source="$PROJECT_DIR$/node_modules/gulp/index.js#Orchestrator#47;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/index.js#deprecated#125;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/index.js#gutil#91;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/index.js#util#19;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/index.js#vfs#165;" target="util">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+            <edge source="$PROJECT_DIR$/node_modules/gulp-webserver/src/index.js#connect#131;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#connectLivereload#208;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#enableMiddlewareShorthand#551;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#extend#514;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#fs#367;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#gutil#39;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#http#73;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#https#101;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#isarray#623;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#open#460;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#path#432;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#proxy#263;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#serveIndex#391;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#serveStatic#165;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#through#4;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#tinyLr#304;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#url#488;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#watch#337;" target="https">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+            <edge source="$PROJECT_DIR$/node_modules/gulp-webserver/src/index.js#connect#131;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#connectLivereload#208;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#enableMiddlewareShorthand#551;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#extend#514;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#fs#367;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#gutil#39;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#http#73;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#https#101;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#isarray#623;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#open#460;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#path#432;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#proxy#263;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#serveIndex#391;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#serveStatic#165;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#through#4;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#tinyLr#304;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#url#488;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#watch#337;" target="proxy-middleware">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+            <edge source="$PROJECT_DIR$/node_modules/gulp-webserver/src/index.js#connect#131;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#connectLivereload#208;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#enableMiddlewareShorthand#551;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#extend#514;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#fs#367;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#gutil#39;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#http#73;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#https#101;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#isarray#623;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#open#460;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#path#432;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#proxy#263;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#serveIndex#391;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#serveStatic#165;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#through#4;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#tinyLr#304;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#url#488;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#watch#337;" target="serve-index">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+            <edge source="$PROJECT_DIR$/node_modules/gulp/index.js#Orchestrator#47;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/index.js#deprecated#125;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/index.js#gutil#91;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/index.js#util#19;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/index.js#vfs#165;" target="orchestrator">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+            <edge source="$PROJECT_DIR$/node_modules/gulp-webserver/src/index.js#connect#131;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#connectLivereload#208;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#enableMiddlewareShorthand#551;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#extend#514;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#fs#367;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#gutil#39;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#http#73;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#https#101;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#isarray#623;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#open#460;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#path#432;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#proxy#263;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#serveIndex#391;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#serveStatic#165;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#through#4;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#tinyLr#304;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#url#488;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#watch#337;" target="isarray">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+            <edge source="$PROJECT_DIR$/node_modules/gulp/bin/gulp.js#Liftoff#208;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#archy#178;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#argv#395;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#chalk#116;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#cliPackage#884;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#completion#348;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#env.configPath#3146;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#gulpInst#3249;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#gutil#39;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#interpret#276;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#prettyTime#73;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#semver#146;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#taskTree#450;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#tildify#242;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#v8flags#314;" target="$PROJECT_DIR$/node_modules/gulp/package.json">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+            <edge source="$PROJECT_DIR$/node_modules/gulp/bin/gulp.js#Liftoff#208;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#archy#178;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#argv#395;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#chalk#116;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#cliPackage#884;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#completion#348;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#env.configPath#3146;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#gulpInst#3249;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#gutil#39;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#interpret#276;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#prettyTime#73;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#semver#146;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#taskTree#450;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#tildify#242;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#v8flags#314;" target="v8flags">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+            <edge source="$PROJECT_DIR$/node_modules/gulp/bin/gulp.js#Liftoff#208;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#archy#178;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#argv#395;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#chalk#116;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#cliPackage#884;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#completion#348;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#env.configPath#3146;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#gulpInst#3249;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#gutil#39;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#interpret#276;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#prettyTime#73;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#semver#146;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#taskTree#450;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#tildify#242;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#v8flags#314;" target="chalk">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+            <edge source="$PROJECT_DIR$/node_modules/gulp-webserver/src/index.js#connect#131;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#connectLivereload#208;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#enableMiddlewareShorthand#551;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#extend#514;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#fs#367;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#gutil#39;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#http#73;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#https#101;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#isarray#623;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#open#460;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#path#432;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#proxy#263;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#serveIndex#391;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#serveStatic#165;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#through#4;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#tinyLr#304;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#url#488;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#watch#337;" target="path">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+            <edge source="$PROJECT_DIR$/node_modules/gulp-webserver/src/index.js#connect#131;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#connectLivereload#208;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#enableMiddlewareShorthand#551;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#extend#514;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#fs#367;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#gutil#39;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#http#73;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#https#101;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#isarray#623;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#open#460;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#path#432;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#proxy#263;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#serveIndex#391;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#serveStatic#165;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#through#4;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#tinyLr#304;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#url#488;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#watch#337;" target="$PROJECT_DIR$/node_modules/gulp-webserver/src/enableMiddlewareShorthand/index.js#extend#4;">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+            <edge source="$PROJECT_DIR$/node_modules/gulp-webserver/src/index.js#connect#131;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#connectLivereload#208;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#enableMiddlewareShorthand#551;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#extend#514;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#fs#367;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#gutil#39;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#http#73;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#https#101;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#isarray#623;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#open#460;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#path#432;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#proxy#263;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#serveIndex#391;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#serveStatic#165;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#through#4;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#tinyLr#304;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#url#488;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#watch#337;" target="connect">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+            <edge source="$PROJECT_DIR$/node_modules/gulp-webserver/src/index.js#connect#131;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#connectLivereload#208;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#enableMiddlewareShorthand#551;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#extend#514;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#fs#367;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#gutil#39;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#http#73;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#https#101;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#isarray#623;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#open#460;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#path#432;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#proxy#263;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#serveIndex#391;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#serveStatic#165;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#through#4;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#tinyLr#304;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#url#488;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#watch#337;" target="$PROJECT_DIR$/node_modules/gulp-webserver/node_modules/gulp-util/index.js">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+            <edge source="$PROJECT_DIR$/node_modules/gulp-webserver/src/index.js#connect#131;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#connectLivereload#208;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#enableMiddlewareShorthand#551;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#extend#514;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#fs#367;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#gutil#39;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#http#73;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#https#101;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#isarray#623;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#open#460;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#path#432;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#proxy#263;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#serveIndex#391;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#serveStatic#165;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#through#4;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#tinyLr#304;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#url#488;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#watch#337;" target="connect-livereload">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+            <edge source="$PROJECT_DIR$/node_modules/gulp/index.js#Orchestrator#47;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/index.js#deprecated#125;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/index.js#gutil#91;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/index.js#util#19;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/index.js#vfs#165;" target="deprecated">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+            <edge source="$PROJECT_DIR$/node_modules/gulp/index.js#Orchestrator#47;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/index.js#deprecated#125;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/index.js#gutil#91;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/index.js#util#19;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/index.js#vfs#165;" target="gulp-util">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+            <edge source="$PROJECT_DIR$/node_modules/gulp/bin/gulp.js#Liftoff#208;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#archy#178;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#argv#395;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#chalk#116;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#cliPackage#884;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#completion#348;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#env.configPath#3146;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#gulpInst#3249;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#gutil#39;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#interpret#276;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#prettyTime#73;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#semver#146;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#taskTree#450;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#tildify#242;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#v8flags#314;" target="env.modulePath">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+            <edge source="$PROJECT_DIR$/node_modules/gulp-webserver/src/index.js#connect#131;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#connectLivereload#208;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#enableMiddlewareShorthand#551;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#extend#514;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#fs#367;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#gutil#39;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#http#73;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#https#101;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#isarray#623;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#open#460;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#path#432;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#proxy#263;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#serveIndex#391;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#serveStatic#165;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#through#4;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#tinyLr#304;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#url#488;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#watch#337;" target="tiny-lr">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+            <edge source="$PROJECT_DIR$/node_modules/gulp/bin/gulp.js#Liftoff#208;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#archy#178;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#argv#395;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#chalk#116;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#cliPackage#884;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#completion#348;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#env.configPath#3146;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#gulpInst#3249;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#gutil#39;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#interpret#276;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#prettyTime#73;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#semver#146;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#taskTree#450;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#tildify#242;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#v8flags#314;" target="semver">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+            <edge source="$PROJECT_DIR$/node_modules/gulp/index.js#Orchestrator#47;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/index.js#deprecated#125;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/index.js#gutil#91;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/index.js#util#19;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/index.js#vfs#165;" target="vinyl-fs">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+            <edge source="$PROJECT_DIR$/node_modules/gulp/bin/gulp.js#Liftoff#208;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#archy#178;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#argv#395;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#chalk#116;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#cliPackage#884;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#completion#348;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#env.configPath#3146;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#gulpInst#3249;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#gutil#39;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#interpret#276;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#prettyTime#73;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#semver#146;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#taskTree#450;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#tildify#242;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#v8flags#314;" target="archy">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+            <edge source="$PROJECT_DIR$/node_modules/gulp-webserver/src/index.js#connect#131;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#connectLivereload#208;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#enableMiddlewareShorthand#551;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#extend#514;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#fs#367;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#gutil#39;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#http#73;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#https#101;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#isarray#623;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#open#460;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#path#432;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#proxy#263;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#serveIndex#391;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#serveStatic#165;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#through#4;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#tinyLr#304;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#url#488;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#watch#337;" target="url">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+            <edge source="$PROJECT_DIR$/gulpfile.js#gulp#6;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/gulpfile.js#webserver#36;" target="$PROJECT_DIR$/node_modules/gulp-webserver/src/index.js#connect#131;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#connectLivereload#208;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#enableMiddlewareShorthand#551;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#extend#514;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#fs#367;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#gutil#39;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#http#73;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#https#101;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#isarray#623;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#open#460;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#path#432;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#proxy#263;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#serveIndex#391;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#serveStatic#165;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#through#4;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#tinyLr#304;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#url#488;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#watch#337;">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+            <edge source="$PROJECT_DIR$/node_modules/gulp-webserver/src/index.js#connect#131;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#connectLivereload#208;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#enableMiddlewareShorthand#551;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#extend#514;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#fs#367;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#gutil#39;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#http#73;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#https#101;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#isarray#623;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#open#460;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#path#432;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#proxy#263;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#serveIndex#391;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#serveStatic#165;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#through#4;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#tinyLr#304;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#url#488;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp-webserver/src/index.js#watch#337;" target="$PROJECT_DIR$/node_modules/gulp-webserver/node_modules/through2/through2.js">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+            <edge source="$PROJECT_DIR$/node_modules/gulp/bin/gulp.js#Liftoff#208;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#archy#178;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#argv#395;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#chalk#116;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#cliPackage#884;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#completion#348;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#env.configPath#3146;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#gulpInst#3249;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#gutil#39;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#interpret#276;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#prettyTime#73;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#semver#146;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#taskTree#450;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#tildify#242;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/bin/gulp.js#v8flags#314;" target="$PROJECT_DIR$/node_modules/gulp/lib/completion.js#fs#19;/home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/node_modules/gulp/lib/completion.js#path#43;">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+          </edges>
+          <settings layout="Hierarchic Group" zoom="0.684168012924071" x="118.61097992916177" y="340.79102715466354" />
+          <SelectedNodes>
+            <node>$PROJECT_DIR$/style.css</node>
+          </SelectedNodes>
+          <Categories>
+            <Category>All</Category>
+          </Categories>
+          <VISIBILITY>Details</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://JavaScript-modules-diagram//home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/app/models">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JavaScript-modules-diagram</ID>
+          <OriginalElement>$PROJECT_DIR$/app/models</OriginalElement>
+          <nodes />
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="712.0" y="423.5" />
+          <SelectedNodes />
+          <Categories>
+            <Category>All</Category>
+          </Categories>
+          <VISIBILITY>Details</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://JavaScript-modules-diagram//home/objectedge/Documents/eduardo/projects/agentes-recicladores-de-lixo-autonomos/app">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JavaScript-modules-diagram</ID>
+          <OriginalElement>$PROJECT_DIR$/app</OriginalElement>
+          <nodes>
+            <node x="" y="">$PROJECT_DIR$/app/models/Agent.js</node>
+            <node x="" y="">$PROJECT_DIR$/app/index.js#Agent#7;</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="101.0" y="82.5" />
+          <SelectedNodes />
+          <Categories>
+            <Category>All</Category>
+          </Categories>
+          <VISIBILITY>Details</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.babelrc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="1" lean-forward="true" selection-start-line="3" selection-start-column="1" selection-end-line="3" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="0" lean-forward="true" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gulpfile.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="3" lean-forward="true" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="1" lean-forward="true" selection-start-line="0" selection-start-column="1" selection-end-line="0" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webpack.config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="22" column="0" lean-forward="true" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/bundle.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="16" lean-forward="false" selection-start-line="10" selection-start-column="16" selection-end-line="10" selection-end-column="16" />
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="21" lean-forward="true" selection-start-line="14" selection-start-column="21" selection-end-line="14" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="7" lean-forward="false" selection-start-line="13" selection-start-column="7" selection-end-line="13" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/App.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="29" lean-forward="false" selection-start-line="2" selection-start-column="29" selection-end-line="2" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/Trash.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="2" lean-forward="true" selection-start-line="4" selection-start-column="2" selection-end-line="4" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/Agent.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="28" lean-forward="true" selection-start-line="0" selection-start-column="28" selection-end-line="0" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/Field.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="1" lean-forward="true" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/Environment.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="39" column="0" lean-forward="true" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
