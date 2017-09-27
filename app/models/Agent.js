@@ -6,8 +6,8 @@ export default class Agent {
      * @param name
      * @param hold {Trash}
      */
-    constructor(name, hold) {
-        this.name = name;
-        this.hold = hold;
+    constructor(numberOfOrganicDirt, numberOfGarbageDirt) {
+        this.numberOfOrganicDirt = numberOfOrganicDirt;
+        this.numberOfGarbageDirt = numberOfGarbageDirt;
     }
 };

@@ -9,6 +9,25 @@
     </head>
     <body>
         <h1>Agentes Recicladores De Lixo Autônomos</h1>
+
+        <form id="environment" name="environment" method="POST" action="#">
+            <label>Tamanho do Ambiente</label>
+            <select name="qtt">
+                <option value="8">8x8 (2x A, 2x Lo, 2x Ls, 6x O, 6x S)</option>
+                <option value="12">12x12 (4x A, 4x Lo, 4x Ls, 13x O, 13x S)</option>
+                <option value="16">16x16 (8x A, 8x Lo, 8x Ls, 23x O, 23x S)</option>
+                <option value="20">20x20 (12x A, 12x Lo, 12x Ls, 36x O, 36x S)</option>
+            </select>
+            <button type="submit" class="btn">Gerar</button>
+        </form>
+
+        <table id="table-environment">
+            <tbody>
+
+            </tbody>
+        </table>
+
+        <button class="btn btn-next-step" onclick="nextStep()">Próximo passo</button>
         <script src="bundle.js"></script>
     </body>
 </html>

@@ -1,0 +1,28 @@
+body {
+    text-align: center;
+}
+
+#table-environment {
+    margin: 0 auto;
+    display: none;
+}
+
+#table-environment,
+#table-environment td {
+    border: 1px solid #000;
+}
+
+#table-environment td {
+    width: 30px;
+    min-width: 30px;
+    height: 30px;
+    min-height: 30px;
+    text-align: center;
+    vertical-align: middle;
+    font-weight: bold;
+}
+
+.btn-next-step {
+    margin-top: 30px;
+    display: none;
+}

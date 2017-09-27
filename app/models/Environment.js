@@ -3,7 +3,7 @@ import Field from './Field';
 export default class Environment {
     constructor(size) {
         this.size = size;
-        this.fields = Array(size * size).fill(new Field(undefined, undefined, undefined, undefined));
+        this.fields = Array(size * size).fill(new Field(undefined, undefined, undefined, undefined, undefined));
 
         const getCoordenate = (row, col) => {
             return ((row + 1) * this.size) - (this.size - (col + 1)) - 1;
@@ -13,7 +13,7 @@ export default class Environment {
         let col = 0;
         let top, left, bottom, right;
 
-        this.fields.forEach((field, index) => {
+        this.fields.forEach((field, index, fields) => {
             // console.log('index', index);
             top = null;
             left = null;
@@ -21,23 +21,23 @@ export default class Environment {
             right = null;
 
             if (row !== 0) {
-                top = getCoordenate(row - 1, col);
+                top = fields[getCoordenate(row - 1, col)];
             }
 
             if (row !== this.size - 1) {
-                bottom = getCoordenate(row + 1, col);
+                bottom = fields[getCoordenate(row + 1, col)];
             }
 
             if (col !== 0) {
-                left = getCoordenate(row, col - 1);
+                left = fields[getCoordenate(row, col - 1)];
             }
 
             if (col !== this.size - 1) {
-                right = getCoordenate(row, col + 1);
+                right = fields[getCoordenate(row, col + 1)];
             }
 
             // seta posiçoes no campo
-            this.fields[index] = new Field(top, left, bottom, right);
+            fields[index] = new Field(top, left, bottom, right, undefined);
             // console.log(this.fields[index]);
 
             // Controle de Row
