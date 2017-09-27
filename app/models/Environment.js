@@ -1,5 +1,3 @@
-import Agent from './Agent';
-import Trash from './Trash';
 import Field from './Field';
 
 export default class Environment {
@@ -8,7 +6,7 @@ export default class Environment {
         this.fields = Array(size * size).fill(new Field(undefined, undefined, undefined, undefined));
 
         const getCoordenate = (row, col) => {
-            return ((row + 1) * this.size) - (this.size - (col + 1)) -1;
+            return ((row + 1) * this.size) - (this.size - (col + 1)) - 1;
         };
 
         let row = 0;

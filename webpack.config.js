@@ -10,6 +10,7 @@ module.exports = {
         port: 3333
     }
 };
+
 module: {
     loaders: [{
         test: /\.js$/,
