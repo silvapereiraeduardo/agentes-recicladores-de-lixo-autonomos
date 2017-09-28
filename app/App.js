@@ -1,3 +1,4 @@
+import Tools from "./lib/Tools";
 import Environment from "./models/Environment";
 import Trash from './models/Trash';
 import Dirt from './models/Dirt';
@@ -18,32 +19,50 @@ const populateEnvironment = (environmentSize) => {
 
     let fieldIdx;
 
-    const drawPosition = (min, max) => {
-        min = Math.ceil(min);
-        max = Math.floor(max);
-        let drawElement = Math.floor(Math.random() * (max - min + 1)) + min;
-
-        if (environment.fields[drawElement].hold) {
-            return drawPosition(min, max);
-        } else {
-            return drawElement;
-        }
-    };
-
-    const setHoldInField = (qtt, element) => {
+    const setHoldInField = (qtt, newObj, params) => {
         let field;
+        let obj;
+
+        let tools = new Tools();
+        let min, max;
+
+        const callbackDrawNumber = (number) => {
+            if (environment.fields[number].hold) {
+                return tools.drawNumber(min, max, callbackDrawNumber);
+            } else {
+                return number;
+            }
+        };
 
         for (let i = 0; i < qtt; i++) {
             do {
-                fieldIdx = drawPosition(0, numberOfFields - 1);
+                min = 0;
+                max = numberOfFields - 1;
+
+                fieldIdx = tools.drawNumber(min, max, callbackDrawNumber);
                 field = environment.fields[fieldIdx];
             } while ((field.top === null || field.top && field.top.hold instanceof Trash) &&
             (field.right === null || field.right && field.right.hold instanceof Trash) &&
             (field.bottom === null || field.bottom && field.bottom.hold instanceof Trash) &&
             (field.left === null || field.left && field.left.hold instanceof Trash));
 
-            environment.fields[fieldIdx].hold = element;
-            if (element instanceof Agent) {
+            switch (newObj) {
+                case 'Trash' : {
+                    obj = new Trash(params.param1);
+                    break;
+                }
+                case 'Dirt' : {
+                    obj = new Dirt(params.param1);
+                    break;
+                }
+                case 'Agent' : {
+                    obj = new Agent(params.param1, params.param2, params.param3, params.param4);
+                    break;
+                }
+            }
+
+            environment.fields[fieldIdx].hold = obj;
+            if (obj instanceof Agent) {
                 agents.push(environment.fields[fieldIdx]);
             }
         }
@@ -52,22 +71,41 @@ const populateEnvironment = (environmentSize) => {
     agents = [];
 
     // seta as Lixeiras
-    setHoldInField(numberOfOrganicTrash, new Trash('Lo'));
-    setHoldInField(numberOfGarbageTrash, new Trash('Ls'));
+    setHoldInField(numberOfOrganicTrash, 'Trash', {
+        param1: 'Lo'
+    });
+    setHoldInField(numberOfGarbageTrash, 'Trash', {
+        param1: 'Ls'
+    });
     // seta os Lixos
-    setHoldInField(numberOfOrganicDirt, new Dirt('O'));
-    setHoldInField(numberOfGarbageDirt, new Dirt('S'));
+    setHoldInField(numberOfOrganicDirt, 'Dirt', {
+        param1: 'O'
+    });
+    setHoldInField(numberOfGarbageDirt, 'Dirt', {
+        param1: 'S'
+    });
     // seta os Agents
-    setHoldInField(numberOfAgents, new Agent(0, 0));
+    setHoldInField(numberOfAgents, 'Agent', {
+        param1: 1,
+        param2: 1,
+        param3: [],
+        param4: []
+    });
 };
 
-const generateEnvironment = (environmentSize) => {
+const showEnvironment = () => {
+    const tableEnv = $('#table-environment');
+    const btnNextStep = $('.btn-next-step');
     let row = 0, col = 0;
-    environment = new Environment(environmentSize);
+    let environmentSize = environment.size;
 
-    populateEnvironment(environmentSize);
+    btnNextStep.hide();
+    tableEnv.hide();
 
-    environment.fields.forEach((field, index, fields) => {
+    tableEnv.find('tbody').remove();
+    tableEnv.append('<tbody></tbody>');
+
+    environment.fields.forEach((field) => {
         let fieldValue;
 
         if (col === 0) {
@@ -82,7 +120,7 @@ const generateEnvironment = (environmentSize) => {
             fieldValue = '';
         }
 
-        $('#table-environment .row-' + row).append('<td>' + fieldValue + '</td>');
+        $('#table-environment .row-' + row).append('<td class="' + fieldValue.toLowerCase() + '">' + fieldValue + '</td>');
 
         if (row < environmentSize && col === (environmentSize - 1)) {
             row++;
@@ -94,33 +132,31 @@ const generateEnvironment = (environmentSize) => {
             col = 0;
         }
     });
+
+    tableEnv.show();
+    btnNextStep.show();
 };
 
-window.nextStep = () => {
-    agents.forEach((agent) => {
-        console.log(agent);
+const generateEnvironment = (environmentSize) => {
+    environment = new Environment(environmentSize);
+    populateEnvironment(environmentSize);
+    showEnvironment();
+};
+
+window.startAgents = () => {
+    agents.forEach((agent, index) => {
+        agents[index] = agent.hold.walk(agent);
     });
+
+    showEnvironment(environment);
 };
 
 $(document).ready(() => {
     const generateEnvEl = $('#environment');
-    const tableEnv = $('#table-environment');
-    const btnNextStep = $('.btn-next-step');
 
     generateEnvEl.on('submit', (e) => {
-        btnNextStep.hide();
-        tableEnv.hide();
-
-        let qtt = generateEnvEl[0].elements.qtt.value;
-
         e.preventDefault();
-
-        tableEnv.find('tbody').remove();
-        tableEnv.append('<tbody></tbody>');
-
+        let qtt = generateEnvEl[0].elements.qtt.value;
         generateEnvironment(qtt);
-
-        tableEnv.show();
-        btnNextStep.show();
     });
 });

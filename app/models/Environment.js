@@ -14,7 +14,6 @@ export default class Environment {
         let top, left, bottom, right;
 
         this.fields.forEach((field, index, fields) => {
-            // console.log('index', index);
             top = null;
             left = null;
             bottom = null;
