@@ -60,7 +60,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 3);
+/******/ 	return __webpack_require__(__webpack_require__.s = 4);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -110,17 +110,96 @@ class Dirt {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__lib_Tools__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__models_Environment__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__models_Trash__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__models_Dirt__ = __webpack_require__(2);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__models_Agent__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__vendor_jquery__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__vendor_jquery___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5__vendor_jquery__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Trash__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Dirt__ = __webpack_require__(2);
 
 
 
+
+class Agent {
+    constructor(capacityOfOrganicDirt, capacityOfGarbageDirt, slotOrganicDirt, slotDryDirt) {
+        this.capacityOfOrganicDirt = capacityOfOrganicDirt;
+        this.capacityOfGarbageDirt = capacityOfGarbageDirt;
+        this.slotOrganicDirt = slotOrganicDirt;
+        this.slotDryDirt = slotDryDirt;
+        this.direction = undefined;
+        this.cycle = 0;
+    }
+
+    walk(field) {
+        let tools = new __WEBPACK_IMPORTED_MODULE_0__lib_Tools__["a" /* default */]();
+        let drawNumberArray = ['top', 'right', 'bottom', 'left'];
+        let newField = field;
+        let agent = newField.hold;
+        let min = 0;
+        let max = 3;
+
+        const callbackDrawNumber = (number) => {
+            if (!field[drawNumberArray[number]]) {
+                return tools.drawNumber(min, max, callbackDrawNumber);
+            } else {
+                return drawNumberArray[number];
+            }
+        };
+
+        if (agent.direction !== null) {
+            agent.direction = tools.drawNumber(min, max, callbackDrawNumber);
+        }
+
+        if (field[agent.direction].hold instanceof __WEBPACK_IMPORTED_MODULE_2__Dirt__["a" /* default */]) {
+            if (field[agent.direction].hold.type === 'O' && agent.slotOrganicDirt.length < agent.capacityOfOrganicDirt) {
+                agent.slotOrganicDirt.push(field[agent.direction].hold);
+                field[agent.direction].hold = agent;
+                newField = field[agent.direction];
+                field.hold = null;
+            }
+            if (field[agent.direction].hold.type === 'S' && agent.slotDryDirt.length < agent.capacityOfGarbageDirt) {
+                agent.slotDryDirt.push(field[agent.direction].hold);
+                field[agent.direction].hold = agent;
+                newField = field[agent.direction];
+                field.hold = null;
+            }
+        }
+
+        if (field[agent.direction].hold instanceof __WEBPACK_IMPORTED_MODULE_1__Trash__["a" /* default */]) {
+            if (field[agent.direction].hold.type === 'Lo' && agent.slotOrganicDirt.length === agent.capacityOfOrganicDirt) {
+                agent.slotOrganicDirt = [];
+            }
+            if (field[agent.direction].hold.type === 'Ls' && agent.slotDryDirt.length === agent.capacityOfGarbageDirt) {
+                agent.slotDryDirt = [];
+            }
+        }
+
+        if (field[agent.direction].hold === undefined) {
+            field[agent.direction].hold = agent;
+            newField = field[agent.direction];
+            field.hold = null;
+        }
+
+        if (agent.cycle < 2) {
+            agent.cycle = agent.cycle + 1;
+        } else {
+            agent.direction = undefined;
+            agent.cycle = 0;
+        }
+
+        return newField;
+    }
+}
+/* harmony export (immutable) */ __webpack_exports__["a"] = Agent;
+;
+
+/***/ }),
+/* 4 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__models_Environment__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__models_Agent__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__vendor_jquery__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__vendor_jquery___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__vendor_jquery__);
 
 
 
@@ -128,94 +207,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 let environment;
 let agents;
 
-const populateEnvironment = (environmentSize) => {
-    let numberOfFields = environmentSize * environmentSize;
-
-    let numberOfAgents = Math.round((3 * numberOfFields) / 100);
-    let numberOfOrganicTrash = Math.round((3 * numberOfFields) / 100);
-    let numberOfGarbageTrash = Math.round((3 * numberOfFields) / 100);
-    let numberOfOrganicDirt = Math.round((9 * numberOfFields) / 100);
-    let numberOfGarbageDirt = Math.round((9 * numberOfFields) / 100);
-
-    let fieldIdx;
-
-    const setHoldInField = (qtt, newObj, params) => {
-        let field;
-        let obj;
-
-        let tools = new __WEBPACK_IMPORTED_MODULE_0__lib_Tools__["a" /* default */]();
-        let min, max;
-
-        const callbackDrawNumber = (number) => {
-            if (environment.fields[number].hold) {
-                return tools.drawNumber(min, max, callbackDrawNumber);
-            } else {
-                return number;
-            }
-        };
-
-        for (let i = 0; i < qtt; i++) {
-            do {
-                min = 0;
-                max = numberOfFields - 1;
-
-                fieldIdx = tools.drawNumber(min, max, callbackDrawNumber);
-                field = environment.fields[fieldIdx];
-            } while ((field.top === null || field.top && field.top.hold instanceof __WEBPACK_IMPORTED_MODULE_2__models_Trash__["a" /* default */]) &&
-            (field.right === null || field.right && field.right.hold instanceof __WEBPACK_IMPORTED_MODULE_2__models_Trash__["a" /* default */]) &&
-            (field.bottom === null || field.bottom && field.bottom.hold instanceof __WEBPACK_IMPORTED_MODULE_2__models_Trash__["a" /* default */]) &&
-            (field.left === null || field.left && field.left.hold instanceof __WEBPACK_IMPORTED_MODULE_2__models_Trash__["a" /* default */]));
-
-            switch (newObj) {
-                case 'Trash' : {
-                    obj = new __WEBPACK_IMPORTED_MODULE_2__models_Trash__["a" /* default */](params.param1);
-                    break;
-                }
-                case 'Dirt' : {
-                    obj = new __WEBPACK_IMPORTED_MODULE_3__models_Dirt__["a" /* default */](params.param1);
-                    break;
-                }
-                case 'Agent' : {
-                    obj = new __WEBPACK_IMPORTED_MODULE_4__models_Agent__["a" /* default */](params.param1, params.param2, params.param3, params.param4);
-                    break;
-                }
-            }
-
-            environment.fields[fieldIdx].hold = obj;
-            if (obj instanceof __WEBPACK_IMPORTED_MODULE_4__models_Agent__["a" /* default */]) {
-                agents.push(environment.fields[fieldIdx]);
-            }
-        }
-    };
-
-    agents = [];
-
-    // seta as Lixeiras
-    setHoldInField(numberOfOrganicTrash, 'Trash', {
-        param1: 'Lo'
-    });
-    setHoldInField(numberOfGarbageTrash, 'Trash', {
-        param1: 'Ls'
-    });
-    // seta os Lixos
-    setHoldInField(numberOfOrganicDirt, 'Dirt', {
-        param1: 'O'
-    });
-    setHoldInField(numberOfGarbageDirt, 'Dirt', {
-        param1: 'S'
-    });
-    // seta os Agents
-    setHoldInField(numberOfAgents, 'Agent', {
-        param1: 1,
-        param2: 1,
-        param3: [],
-        param4: []
-    });
-};
-
 const showEnvironment = () => {
-    const tableEnv = __WEBPACK_IMPORTED_MODULE_5__vendor_jquery___default()('#table-environment');
-    const btnNextStep = __WEBPACK_IMPORTED_MODULE_5__vendor_jquery___default()('.btn-next-step');
+    const tableEnv = __WEBPACK_IMPORTED_MODULE_2__vendor_jquery___default()('#table-environment');
+    const btnNextStep = __WEBPACK_IMPORTED_MODULE_2__vendor_jquery___default()('.btn-next-step');
     let row = 0, col = 0;
     let environmentSize = environment.size;
 
@@ -229,10 +223,10 @@ const showEnvironment = () => {
         let fieldValue;
 
         if (col === 0) {
-            __WEBPACK_IMPORTED_MODULE_5__vendor_jquery___default()('#table-environment').append('<tr class="row-' + row + '"></tr>');
+            __WEBPACK_IMPORTED_MODULE_2__vendor_jquery___default()('#table-environment').append('<tr class="row-' + row + '"></tr>');
         }
 
-        if (field.hold instanceof __WEBPACK_IMPORTED_MODULE_4__models_Agent__["a" /* default */]) {
+        if (field.hold instanceof __WEBPACK_IMPORTED_MODULE_1__models_Agent__["a" /* default */]) {
             fieldValue = 'A';
         } else if (field.hold) {
             fieldValue = field.hold.type;
@@ -240,7 +234,7 @@ const showEnvironment = () => {
             fieldValue = '';
         }
 
-        __WEBPACK_IMPORTED_MODULE_5__vendor_jquery___default()('#table-environment .row-' + row).append('<td class="' + fieldValue.toLowerCase() + '">' + fieldValue + '</td>');
+        __WEBPACK_IMPORTED_MODULE_2__vendor_jquery___default()('#table-environment .row-' + row).append('<td class="' + fieldValue.toLowerCase() + '">' + fieldValue + '</td>');
 
         if (row < environmentSize && col === (environmentSize - 1)) {
             row++;
@@ -258,21 +252,41 @@ const showEnvironment = () => {
 };
 
 const generateEnvironment = (environmentSize) => {
-    environment = new __WEBPACK_IMPORTED_MODULE_1__models_Environment__["a" /* default */](environmentSize);
-    populateEnvironment(environmentSize);
+    agents = [];
+    environment = new __WEBPACK_IMPORTED_MODULE_0__models_Environment__["a" /* default */](environmentSize);
+    environment.populateEnvironment();
+
+    environment.fields.forEach((field) => {
+        if (field.hold instanceof __WEBPACK_IMPORTED_MODULE_1__models_Agent__["a" /* default */]) {
+            agents.push(field);
+        }
+    });
+
     showEnvironment();
 };
 
-window.startAgents = () => {
-    agents.forEach((agent, index) => {
-        agents[index] = agent.hold.walk(agent);
-    });
+__WEBPACK_IMPORTED_MODULE_2__vendor_jquery___default()(document).ready(() => {
+    const generateEnvEl = __WEBPACK_IMPORTED_MODULE_2__vendor_jquery___default()('#environment');
+    let nIntervalId;
 
-    showEnvironment(environment);
-};
+    window.startAgents = () => {
+        let i = 0;
+        const task = () => {
+            agents.forEach((agent, index) => {
+                agents[index] = agent.hold.walk(agent);
+                console.log(i, agent);
+            });
 
-__WEBPACK_IMPORTED_MODULE_5__vendor_jquery___default()(document).ready(() => {
-    const generateEnvEl = __WEBPACK_IMPORTED_MODULE_5__vendor_jquery___default()('#environment');
+            showEnvironment(environment);
+            i++;
+        };
+
+        nIntervalId = window.setInterval(task, 1000);
+    };
+
+    window.stopAgents = () => {
+        window.clearTimeout(nIntervalId);
+    };
 
     generateEnvEl.on('submit', (e) => {
         e.preventDefault();
@@ -282,17 +296,29 @@ __WEBPACK_IMPORTED_MODULE_5__vendor_jquery___default()(document).ready(() => {
 });
 
 /***/ }),
-/* 4 */
+/* 5 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Field__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__lib_Tools__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Field__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Trash__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Dirt__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Agent__ = __webpack_require__(3);
+
+
+
+
 
 
 class Environment {
     constructor(size) {
         this.size = size;
-        this.fields = Array(size * size).fill(new __WEBPACK_IMPORTED_MODULE_0__Field__["a" /* default */](undefined, undefined, undefined, undefined, undefined));
+        this.fields = Array(size * size).fill({});
+
+        this.fields.forEach((field, index, fields) => {
+            fields[index] = new __WEBPACK_IMPORTED_MODULE_1__Field__["a" /* default */](undefined, undefined, undefined, undefined, undefined);
+        });
 
         const getCoordenate = (row, col) => {
             return ((row + 1) * this.size) - (this.size - (col + 1)) - 1;
@@ -325,8 +351,11 @@ class Environment {
             }
 
             // seta posiçoes no campo
-            fields[index] = new __WEBPACK_IMPORTED_MODULE_0__Field__["a" /* default */](top, left, bottom, right, undefined);
-            // console.log(this.fields[index]);
+
+            field.top = top;
+            field.right = right;
+            field.bottom = bottom;
+            field.left = left;
 
             // Controle de Row
             if (row < this.size && col === (this.size - 1)) {
@@ -340,12 +369,86 @@ class Environment {
             }
         });
     }
+
+    populateEnvironment() {
+        let environment = this;
+        let numberOfFields = this.size * this.size;
+        let numberOfAgents = Math.round((3 * numberOfFields) / 100);
+        let numberOfOrganicTrash = Math.round((3 * numberOfFields) / 100);
+        let numberOfGarbageTrash = Math.round((3 * numberOfFields) / 100);
+        let numberOfOrganicDirt = Math.round((9 * numberOfFields) / 100);
+        let numberOfGarbageDirt = Math.round((9 * numberOfFields) / 100);
+        let drawFild;
+
+        const setHoldInField = (qtt, newObj, params) => {
+            let tools = new __WEBPACK_IMPORTED_MODULE_0__lib_Tools__["a" /* default */]();
+            let field;
+            let obj;
+            let min = 0;
+            let max = numberOfFields - 1;
+
+            const callbackDrawNumber = (number) => {
+                let tempField = environment.fields[number];
+                if ((tempField.top === null || tempField.top.hold instanceof __WEBPACK_IMPORTED_MODULE_2__Trash__["a" /* default */]) &&
+                    (tempField.right === null || tempField.right.hold instanceof __WEBPACK_IMPORTED_MODULE_2__Trash__["a" /* default */]) &&
+                    (tempField.bottom === null || tempField.bottom.hold instanceof __WEBPACK_IMPORTED_MODULE_2__Trash__["a" /* default */]) &&
+                    (tempField.left === null || tempField.left.hold instanceof __WEBPACK_IMPORTED_MODULE_2__Trash__["a" /* default */])) {
+                    return tools.drawNumber(min, max, callbackDrawNumber);
+                }
+
+                return tempField;
+            };
+
+            for (let i = 0; i < qtt; i++) {
+                field = tools.drawNumber(min, max, callbackDrawNumber);
+
+                switch (newObj) {
+                    case 'Trash' : {
+                        obj = new __WEBPACK_IMPORTED_MODULE_2__Trash__["a" /* default */](params.param1);
+                        break;
+                    }
+                    case 'Dirt' : {
+                        obj = new __WEBPACK_IMPORTED_MODULE_3__Dirt__["a" /* default */](params.param1);
+                        break;
+                    }
+                    case 'Agent' : {
+                        obj = new __WEBPACK_IMPORTED_MODULE_4__Agent__["a" /* default */](params.param1, params.param2, params.param3, params.param4);
+                        break;
+                    }
+                }
+
+                field.hold = obj;
+            }
+        };
+
+        // seta as Lixeiras
+        setHoldInField(numberOfOrganicTrash, 'Trash', {
+            param1: 'Lo'
+        });
+        setHoldInField(numberOfGarbageTrash, 'Trash', {
+            param1: 'Ls'
+        });
+        // seta os Lixos
+        setHoldInField(numberOfOrganicDirt, 'Dirt', {
+            param1: 'O'
+        });
+        setHoldInField(numberOfGarbageDirt, 'Dirt', {
+            param1: 'S'
+        });
+        // seta os Agents
+        setHoldInField(numberOfAgents, 'Agent', {
+            param1: 1,
+            param2: 1,
+            param3: [],
+            param4: []
+        });
+    }
 }
 /* harmony export (immutable) */ __webpack_exports__["a"] = Environment;
 
 
 /***/ }),
-/* 5 */
+/* 6 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -360,85 +463,6 @@ class Field {
 }
 /* harmony export (immutable) */ __webpack_exports__["a"] = Field;
 
-
-/***/ }),
-/* 6 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__lib_Tools__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Trash__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Dirt__ = __webpack_require__(2);
-
-
-
-
-class Agent {
-    constructor(capacityOfOrganicDirt, capacityOfGarbageDirt, slotOrganicDirt, slotGarbageDirt) {
-        this.capacityOfOrganicDirt = capacityOfOrganicDirt;
-        this.capacityOfGarbageDirt = capacityOfGarbageDirt;
-        this.slotOrganicDirt = slotOrganicDirt;
-        this.slotGarbageDirt = slotGarbageDirt;
-        this.direction = undefined;
-        this.cycle = 0;
-    }
-
-    walk(field) {
-        let newField = field;
-        let agent = newField.hold;
-        let tools = new __WEBPACK_IMPORTED_MODULE_0__lib_Tools__["a" /* default */]();
-        let min = 0;
-        let max = 3;
-        let drawNumberArray = ['top', 'right', 'bottom', 'left'];
-
-        const callbackDrawNumber = (number) => {
-            if (!field[drawNumberArray[number]]) {
-                return tools.drawNumber(min, max, callbackDrawNumber);
-            } else {
-                return drawNumberArray[number];
-            }
-        };
-
-        if (agent.direction !== null) {
-            agent.direction = tools.drawNumber(min, max, callbackDrawNumber);
-        }
-
-        if (field[agent.direction].hold instanceof __WEBPACK_IMPORTED_MODULE_2__Dirt__["a" /* default */]) {
-            if (field[agent.direction].hold.type === 'O' && agent.slotOrganicDirt.length < agent.capacityOfOrganicDirt) {
-                agent.slotOrganicDirt.push(field[agent.direction].hold);
-                field[agent.direction].hold = agent;
-                newField = field[agent.direction];
-                field.hold = null;
-            }
-            if (field[agent.direction].hold.type === 'S' && agent.slotGarbageDirt.length < agent.capacityOfGarbageDirt) {
-                agent.slotGarbageDirt.push(field[agent.direction].hold);
-                field[agent.direction].hold = agent;
-                newField = field[agent.direction];
-                field.hold = null;
-            }
-        }
-
-        if (field[agent.direction].hold instanceof __WEBPACK_IMPORTED_MODULE_1__Trash__["a" /* default */]) {
-            if (field[agent.direction].hold.type === 'Lo' && agent.slotOrganicDirt.length === agent.capacityOfOrganicDirt) {
-                agent.slotOrganicDirt = [];
-            }
-            if (field[agent.direction].hold.type === 'Ls' && agent.slotGarbageDirt.length === agent.capacityOfGarbageDirt) {
-                agent.slotOrganicDirt = [];
-            }
-        }
-
-        if (agent.cycle < 2) {
-            agent.cycle = agent.cycle + 1;
-        } else {
-            agent.direction = undefined;
-            agent.cycle = 0;
-        }
-
-        return newField;
-    }
-}
-/* harmony export (immutable) */ __webpack_exports__["a"] = Agent;
-;
 
 /***/ }),
 /* 7 */

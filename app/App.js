@@ -1,97 +1,9 @@
-import Tools from "./lib/Tools";
 import Environment from "./models/Environment";
-import Trash from './models/Trash';
-import Dirt from './models/Dirt';
 import Agent from './models/Agent';
 import $ from './vendor/jquery';
 
 let environment;
 let agents;
-
-const populateEnvironment = (environmentSize) => {
-    let numberOfFields = environmentSize * environmentSize;
-
-    let numberOfAgents = Math.round((3 * numberOfFields) / 100);
-    let numberOfOrganicTrash = Math.round((3 * numberOfFields) / 100);
-    let numberOfGarbageTrash = Math.round((3 * numberOfFields) / 100);
-    let numberOfOrganicDirt = Math.round((9 * numberOfFields) / 100);
-    let numberOfGarbageDirt = Math.round((9 * numberOfFields) / 100);
-
-    let fieldIdx;
-
-    const setHoldInField = (qtt, newObj, params) => {
-        let field;
-        let obj;
-
-        let tools = new Tools();
-        let min, max;
-
-        const callbackDrawNumber = (number) => {
-            if (environment.fields[number].hold) {
-                return tools.drawNumber(min, max, callbackDrawNumber);
-            } else {
-                return number;
-            }
-        };
-
-        for (let i = 0; i < qtt; i++) {
-            do {
-                min = 0;
-                max = numberOfFields - 1;
-
-                fieldIdx = tools.drawNumber(min, max, callbackDrawNumber);
-                field = environment.fields[fieldIdx];
-            } while ((field.top === null || field.top && field.top.hold instanceof Trash) &&
-            (field.right === null || field.right && field.right.hold instanceof Trash) &&
-            (field.bottom === null || field.bottom && field.bottom.hold instanceof Trash) &&
-            (field.left === null || field.left && field.left.hold instanceof Trash));
-
-            switch (newObj) {
-                case 'Trash' : {
-                    obj = new Trash(params.param1);
-                    break;
-                }
-                case 'Dirt' : {
-                    obj = new Dirt(params.param1);
-                    break;
-                }
-                case 'Agent' : {
-                    obj = new Agent(params.param1, params.param2, params.param3, params.param4);
-                    break;
-                }
-            }
-
-            environment.fields[fieldIdx].hold = obj;
-            if (obj instanceof Agent) {
-                agents.push(environment.fields[fieldIdx]);
-            }
-        }
-    };
-
-    agents = [];
-
-    // seta as Lixeiras
-    setHoldInField(numberOfOrganicTrash, 'Trash', {
-        param1: 'Lo'
-    });
-    setHoldInField(numberOfGarbageTrash, 'Trash', {
-        param1: 'Ls'
-    });
-    // seta os Lixos
-    setHoldInField(numberOfOrganicDirt, 'Dirt', {
-        param1: 'O'
-    });
-    setHoldInField(numberOfGarbageDirt, 'Dirt', {
-        param1: 'S'
-    });
-    // seta os Agents
-    setHoldInField(numberOfAgents, 'Agent', {
-        param1: 1,
-        param2: 1,
-        param3: [],
-        param4: []
-    });
-};
 
 const showEnvironment = () => {
     const tableEnv = $('#table-environment');
@@ -138,21 +50,41 @@ const showEnvironment = () => {
 };
 
 const generateEnvironment = (environmentSize) => {
+    agents = [];
     environment = new Environment(environmentSize);
-    populateEnvironment(environmentSize);
-    showEnvironment();
-};
+    environment.populateEnvironment();
 
-window.startAgents = () => {
-    agents.forEach((agent, index) => {
-        agents[index] = agent.hold.walk(agent);
+    environment.fields.forEach((field) => {
+        if (field.hold instanceof Agent) {
+            agents.push(field);
+        }
     });
 
-    showEnvironment(environment);
+    showEnvironment();
 };
 
 $(document).ready(() => {
     const generateEnvEl = $('#environment');
+    let nIntervalId;
+
+    window.startAgents = () => {
+        let i = 0;
+        const task = () => {
+            agents.forEach((agent, index) => {
+                agents[index] = agent.hold.walk(agent);
+                console.log(i, agent);
+            });
+
+            showEnvironment(environment);
+            i++;
+        };
+
+        nIntervalId = window.setInterval(task, 1000);
+    };
+
+    window.stopAgents = () => {
+        window.clearTimeout(nIntervalId);
+    };
 
     generateEnvEl.on('submit', (e) => {
         e.preventDefault();

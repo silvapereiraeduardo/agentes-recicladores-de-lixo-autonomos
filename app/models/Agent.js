@@ -3,22 +3,22 @@ import Trash from './Trash';
 import Dirt from "./Dirt";
 
 export default class Agent {
-    constructor(capacityOfOrganicDirt, capacityOfGarbageDirt, slotOrganicDirt, slotGarbageDirt) {
+    constructor(capacityOfOrganicDirt, capacityOfGarbageDirt, slotOrganicDirt, slotDryDirt) {
         this.capacityOfOrganicDirt = capacityOfOrganicDirt;
         this.capacityOfGarbageDirt = capacityOfGarbageDirt;
         this.slotOrganicDirt = slotOrganicDirt;
-        this.slotGarbageDirt = slotGarbageDirt;
+        this.slotDryDirt = slotDryDirt;
         this.direction = undefined;
         this.cycle = 0;
     }
 
     walk(field) {
+        let tools = new Tools();
+        let drawNumberArray = ['top', 'right', 'bottom', 'left'];
         let newField = field;
         let agent = newField.hold;
-        let tools = new Tools();
         let min = 0;
         let max = 3;
-        let drawNumberArray = ['top', 'right', 'bottom', 'left'];
 
         const callbackDrawNumber = (number) => {
             if (!field[drawNumberArray[number]]) {
@@ -39,8 +39,8 @@ export default class Agent {
                 newField = field[agent.direction];
                 field.hold = null;
             }
-            if (field[agent.direction].hold.type === 'S' && agent.slotGarbageDirt.length < agent.capacityOfGarbageDirt) {
-                agent.slotGarbageDirt.push(field[agent.direction].hold);
+            if (field[agent.direction].hold.type === 'S' && agent.slotDryDirt.length < agent.capacityOfGarbageDirt) {
+                agent.slotDryDirt.push(field[agent.direction].hold);
                 field[agent.direction].hold = agent;
                 newField = field[agent.direction];
                 field.hold = null;
@@ -51,9 +51,15 @@ export default class Agent {
             if (field[agent.direction].hold.type === 'Lo' && agent.slotOrganicDirt.length === agent.capacityOfOrganicDirt) {
                 agent.slotOrganicDirt = [];
             }
-            if (field[agent.direction].hold.type === 'Ls' && agent.slotGarbageDirt.length === agent.capacityOfGarbageDirt) {
-                agent.slotOrganicDirt = [];
+            if (field[agent.direction].hold.type === 'Ls' && agent.slotDryDirt.length === agent.capacityOfGarbageDirt) {
+                agent.slotDryDirt = [];
             }
+        }
+
+        if (field[agent.direction].hold === undefined) {
+            field[agent.direction].hold = agent;
+            newField = field[agent.direction];
+            field.hold = null;
         }
 
         if (agent.cycle < 2) {
