@@ -75,29 +75,21 @@ class Tools {
         let element = Math.floor(Math.random() * (max - min + 1)) + min;
         return callback(element);
     }
+
+    sleep(milliseconds) {
+        let start = new Date().getTime();
+        for (let i = 0; i < 1e7; i++) {
+            if ((new Date().getTime() - start) > milliseconds) {
+                break;
+            }
+        }
+    }
 }
 /* harmony export (immutable) */ __webpack_exports__["a"] = Tools;
 
 
 /***/ }),
 /* 1 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-class Trash {
-    /**
-     * Inicializa a Lixeira
-     * @param type - Tipo de Lixeira (Lixeira de lixo Origânico ou Seco)
-     */
-    constructor(type) {
-        this.type = type;
-    }
-}
-/* harmony export (immutable) */ __webpack_exports__["a"] = Trash;
-;
-
-/***/ }),
-/* 2 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -114,18 +106,42 @@ class Dirt {
 
 
 /***/ }),
+/* 2 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+class Trash {
+    /**
+     * Inicializa a Lixeira
+     * @param type - Tipo de Lixeira (Lixeira de lixo Origânico ou Seco)
+     */
+    constructor(type) {
+        this.type = type;
+    }
+}
+/* harmony export (immutable) */ __webpack_exports__["a"] = Trash;
+;
+
+/***/ }),
 /* 3 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__lib_Tools__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Trash__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Dirt__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Trash__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Dirt__ = __webpack_require__(1);
 
 
 
 
 class Agent {
+    /**
+     * Incializa o Agente
+     * @param capacityOfOrganicDirt - Capacidade de lixos Orgânicos
+     * @param capacityOfGarbageDirt - Capacidade de lixos Secos
+     * @param slotOrganicDirt - Quantidade de lixos Orgânicos
+     * @param slotDryDirt - Quantidade de lixos Secos
+     */
     constructor(capacityOfOrganicDirt, capacityOfGarbageDirt, slotOrganicDirt, slotDryDirt) {
         this.capacityOfOrganicDirt = capacityOfOrganicDirt;
         this.capacityOfGarbageDirt = capacityOfGarbageDirt;
@@ -135,64 +151,154 @@ class Agent {
         this.cycle = 0;
     }
 
-    walk(field) {
+    lookAround(actualField) {
+        // debugger;
         let tools = new __WEBPACK_IMPORTED_MODULE_0__lib_Tools__["a" /* default */]();
         let drawNumberArray = ['top', 'right', 'bottom', 'left'];
-        let newField = field;
-        let agent = newField.hold;
+        let tempDrawNumberArray = drawNumberArray;
         let min = 0;
         let max = 3;
+        let tempMax = max;
+        let agent = actualField.hold;
+        let drawDirection;
+        let test = false;
+        const validateThisDirection = (field, direction) => {
+            let isValid = true;
 
-        const callbackDrawNumber = (number) => {
-            if (!field[drawNumberArray[number]]) {
-                return tools.drawNumber(min, max, callbackDrawNumber);
-            } else {
-                return drawNumberArray[number];
+            if (field[direction] === null ||
+                (
+                    field[direction] &&
+                    field[direction].hold &&
+                    (
+                        field[direction].hold instanceof __WEBPACK_IMPORTED_MODULE_1__Trash__["a" /* default */] ||
+                        field[direction].hold instanceof Agent
+                    )
+                )
+            ) {
+                isValid = false;
             }
+
+            return isValid;
+        };
+        const getAgentDirection = number => {
+            if (!validateThisDirection(actualField, actualField[tempDrawNumberArray[number]])) {
+                tempMax--;
+                tempDrawNumberArray = tempDrawNumberArray.filter((item, index) => {
+                    return index !== number;
+                });
+                return tools.drawNumber(min, tempMax, getAgentDirection);
+            }
+            return tempDrawNumberArray[number];
         };
 
-        if (agent.direction !== null) {
-            agent.direction = tools.drawNumber(min, max, callbackDrawNumber);
+        if (agent.direction === undefined || !validateThisDirection(actualField, actualField[agent.direction])) {
+            agent.direction = tools.drawNumber(min, tempMax, getAgentDirection);
+            tempMax = max;
+            tempDrawNumberArray = drawNumberArray;
         }
 
-        if (field[agent.direction].hold instanceof __WEBPACK_IMPORTED_MODULE_2__Dirt__["a" /* default */]) {
-            if (field[agent.direction].hold.type === 'O' && agent.slotOrganicDirt.length < agent.capacityOfOrganicDirt) {
-                agent.slotOrganicDirt.push(field[agent.direction].hold);
-                field[agent.direction].hold = agent;
-                newField = field[agent.direction];
-                field.hold = null;
-            }
-            if (field[agent.direction].hold.type === 'S' && agent.slotDryDirt.length < agent.capacityOfGarbageDirt) {
-                agent.slotDryDirt.push(field[agent.direction].hold);
-                field[agent.direction].hold = agent;
-                newField = field[agent.direction];
-                field.hold = null;
-            }
-        }
+        do {
+            drawDirection = tools.drawNumber(min, tempMax, number => {
+                return tempDrawNumberArray[number];
+            });
 
-        if (field[agent.direction].hold instanceof __WEBPACK_IMPORTED_MODULE_1__Trash__["a" /* default */]) {
-            if (field[agent.direction].hold.type === 'Lo' && agent.slotOrganicDirt.length === agent.capacityOfOrganicDirt) {
-                agent.slotOrganicDirt = [];
-            }
-            if (field[agent.direction].hold.type === 'Ls' && agent.slotDryDirt.length === agent.capacityOfGarbageDirt) {
-                agent.slotDryDirt = [];
-            }
-        }
+            tempDrawNumberArray = tempDrawNumberArray.filter(item => {
+                return item !== drawDirection;
+            });
 
-        if (field[agent.direction].hold === undefined) {
-            field[agent.direction].hold = agent;
-            newField = field[agent.direction];
-            field.hold = null;
-        }
+            test = agent.verifyDirection(agent, actualField, drawDirection);
 
-        if (agent.cycle < 2) {
-            agent.cycle = agent.cycle + 1;
+            tempMax--;
+        } while (tempDrawNumberArray.length !== 0 && !test);
+
+        tempMax = max;
+        tempDrawNumberArray = drawNumberArray;
+
+        if (!test) {
+            if (agent.cycle < 2) {
+                agent.cycle = agent.cycle + 1;
+                agent.walk(actualField, actualField[agent.direction]);
+            } else {
+                agent.direction = undefined;
+                agent.cycle = 0;
+            }
         } else {
             agent.direction = undefined;
             agent.cycle = 0;
         }
+    }
 
-        return newField;
+    /**
+     * Caminha com o Agente
+     * @param actualField - Campo do qual se encontra o Agente
+     * @returns {field} - Campo do qual se encontra o Agente
+     */
+    verifyDirection(agent, actualField, direction) {
+        // debugger;
+        let tempField;
+        let isValid = false;
+
+        if (actualField[direction] === null) {
+            return isValid;
+        }
+
+        for (let i = 0; i < 2; i++) {
+            if (i === 0) {
+                tempField = actualField[direction];
+            }
+            if (i === 1 && actualField[direction][direction] !== null) {
+                tempField = actualField[direction][direction]
+            }
+
+            if (tempField.hold instanceof __WEBPACK_IMPORTED_MODULE_2__Dirt__["a" /* default */]) {
+                if (tempField.hold.type === 'O' && agent.slotOrganicDirt.length < agent.capacityOfOrganicDirt) {
+                    agent.slotOrganicDirt.push(tempField.hold);
+                    agent.walk(actualField, tempField);
+                    isValid = true;
+                    break;
+                }
+                if (tempField.hold.type === 'S' && agent.slotDryDirt.length < agent.capacityOfGarbageDirt) {
+                    agent.slotDryDirt.push(tempField.hold);
+                    agent.walk(actualField, tempField);
+                    isValid = true;
+                    break;
+                }
+            }
+
+            if (tempField.hold instanceof __WEBPACK_IMPORTED_MODULE_2__Dirt__["a" /* default */]) {
+                if (tempField.hold.type === 'O' && agent.slotOrganicDirt.length < agent.capacityOfOrganicDirt) {
+                    agent.slotOrganicDirt.push(tempField.hold);
+                    agent.walk(actualField, tempField);
+                    isValid = true;
+                    break;
+                }
+                if (tempField.hold.type === 'S' && agent.slotDryDirt.length < agent.capacityOfGarbageDirt) {
+                    agent.slotDryDirt.push(tempField.hold);
+                    agent.walk(actualField, tempField);
+                    isValid = true;
+                    break;
+                }
+            }
+
+            if (tempField.hold instanceof __WEBPACK_IMPORTED_MODULE_1__Trash__["a" /* default */]) {
+                if (tempField.hold.type === 'Lo' && agent.slotOrganicDirt.length === agent.capacityOfOrganicDirt) {
+                    agent.slotOrganicDirt = [];
+                    break;
+                }
+                if (tempField.hold.type === 'Ls' && agent.slotDryDirt.length === agent.capacityOfGarbageDirt) {
+                    agent.slotDryDirt = [];
+                    break;
+                }
+            }
+        }
+
+        return isValid;
+    }
+
+    walk(oldField, nextField) {
+        oldField.hold = this;
+        nextField.hold = oldField.hold;
+        oldField.hold = null;
     }
 }
 /* harmony export (immutable) */ __webpack_exports__["a"] = Agent;
@@ -206,18 +312,24 @@ class Agent {
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__models_Environment__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__models_Agent__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__vendor_jquery__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__vendor_jquery___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__vendor_jquery__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__models_Dirt__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__vendor_jquery__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__vendor_jquery___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__vendor_jquery__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__lib_Tools__ = __webpack_require__(0);
+
+
 
 
 
 
 let environment;
-let agents;
 
+/**
+ * Imprime o Ambiente
+ */
 const showEnvironment = () => {
-    const tableEnv = __WEBPACK_IMPORTED_MODULE_2__vendor_jquery___default()('#table-environment');
-    const btnNextStep = __WEBPACK_IMPORTED_MODULE_2__vendor_jquery___default()('.btn-next-step');
+    const tableEnv = __WEBPACK_IMPORTED_MODULE_3__vendor_jquery___default()('#table-environment');
+    const btnNextStep = __WEBPACK_IMPORTED_MODULE_3__vendor_jquery___default()('.btn-next-step');
     let row = 0, col = 0;
     let environmentSize = environment.size;
 
@@ -231,7 +343,7 @@ const showEnvironment = () => {
         let fieldValue;
 
         if (col === 0) {
-            __WEBPACK_IMPORTED_MODULE_2__vendor_jquery___default()('#table-environment').append('<tr class="row-' + row + '"></tr>');
+            __WEBPACK_IMPORTED_MODULE_3__vendor_jquery___default()('#table-environment').append('<tr class="row-' + row + '"></tr>');
         }
 
         if (field.hold instanceof __WEBPACK_IMPORTED_MODULE_1__models_Agent__["a" /* default */]) {
@@ -242,7 +354,7 @@ const showEnvironment = () => {
             fieldValue = '';
         }
 
-        __WEBPACK_IMPORTED_MODULE_2__vendor_jquery___default()('#table-environment .row-' + row).append('<td class="' + fieldValue.toLowerCase() + '">' + fieldValue + '</td>');
+        __WEBPACK_IMPORTED_MODULE_3__vendor_jquery___default()('#table-environment .row-' + row).append('<td class="' + fieldValue.toLowerCase() + '">' + fieldValue + '</td>');
 
         if (row < environmentSize && col === (environmentSize - 1)) {
             row++;
@@ -259,46 +371,86 @@ const showEnvironment = () => {
     btnNextStep.show();
 };
 
+/**
+ * Gera o Ambiente
+ * @param environmentSize - tamanho do Ambiente
+ */
 const generateEnvironment = (environmentSize) => {
-    agents = [];
     environment = new __WEBPACK_IMPORTED_MODULE_0__models_Environment__["a" /* default */](environmentSize);
     environment.populateEnvironment();
-
-    environment.fields.forEach((field) => {
-        if (field.hold instanceof __WEBPACK_IMPORTED_MODULE_1__models_Agent__["a" /* default */]) {
-            agents.push(field);
-        }
-    });
-
     showEnvironment();
 };
 
-__WEBPACK_IMPORTED_MODULE_2__vendor_jquery___default()(document).ready(() => {
-    const generateEnvEl = __WEBPACK_IMPORTED_MODULE_2__vendor_jquery___default()('#environment');
-    let nIntervalId;
-
+__WEBPACK_IMPORTED_MODULE_3__vendor_jquery___default()(document).ready(() => {
+    const generateEnvEl = __WEBPACK_IMPORTED_MODULE_3__vendor_jquery___default()('#environment');
+    let intervalRunAgents;
+    let tools = new __WEBPACK_IMPORTED_MODULE_4__lib_Tools__["a" /* default */]();
+    let agentsIsRunning = false;
+    let speed = 2000;
+    /**
+     * Inicializa os Agentes
+     */
     window.startAgents = () => {
-        let i = 0;
-        const task = () => {
-            agents.forEach((agent, index) => {
-                agents[index] = agent.hold.walk(agent);
-                console.log(i, agent);
-            });
-
-            showEnvironment(environment);
-            i++;
+        const getFieldByInstance = (classInstance) => {
+            return environment.fields.filter(field => field.hold instanceof classInstance);
         };
 
-        nIntervalId = window.setInterval(task, 1000);
-    };
+        let fieldsWithAgents = getFieldByInstance(__WEBPACK_IMPORTED_MODULE_1__models_Agent__["a" /* default */]);
+        let idx = 0;
+        // variavel de teste
+        let cont = 0;
 
-    window.stopAgents = () => {
-        window.clearTimeout(nIntervalId);
-    };
+        const runAgents = () => {
+            let agent = fieldsWithAgents[idx].hold;
 
+            agent.lookAround(fieldsWithAgents[idx]);
+            showEnvironment(environment);
+
+            console.log('idx: ' + idx, fieldsWithAgents[idx]);
+
+            if (getFieldByInstance(__WEBPACK_IMPORTED_MODULE_2__models_Dirt__["a" /* default */]).length && cont !== 10) {
+                setTimeout(() => {
+                    if (idx === (fieldsWithAgents.length - 1)) {
+                        fieldsWithAgents = getFieldByInstance(__WEBPACK_IMPORTED_MODULE_1__models_Agent__["a" /* default */]);
+                        idx = 0;
+                    } else {
+                        idx++;
+                    }
+                    cont++;
+                    runAgents();
+                }, speed);
+            }
+        };
+
+        runAgents();
+
+        // const runAgents = () => {
+        //     if (!agentsIsRunning) {
+        //         fieldsWithAgents = environment.fields.filter(field => field.hold instanceof Agent);
+        //         agentsIsRunning = true;
+        //         field = fieldsWithAgents[i];
+        //
+        //         field.hold.walk(field);
+        //         showEnvironment(environment);
+        //
+        //         if (environment.fields.filter(field => field.hold instanceof Dirt).length === 0) {
+        //             agentsIsRunning = false;
+        //             stopAgents();
+        //         }
+        //
+        //         i = (i === (ttAgents - 1) ? 0 : (i + 1));
+        //     }
+        // };
+        //
+        // intervalRunAgents = setInterval(runAgents, speed);
+    };
+    /**
+     * Chama a função de Gerar o Ambiente
+     */
     generateEnvEl.on('submit', (e) => {
         e.preventDefault();
         let qtt = generateEnvEl[0].elements.qtt.value;
+        speed = generateEnvEl[0].elements.speed.value;
         generateEnvironment(qtt);
     });
 });
@@ -310,8 +462,8 @@ __WEBPACK_IMPORTED_MODULE_2__vendor_jquery___default()(document).ready(() => {
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__lib_Tools__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Field__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Trash__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Dirt__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Trash__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Dirt__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Agent__ = __webpack_require__(3);
 
 
@@ -326,10 +478,8 @@ class Environment {
      */
     constructor(size) {
         this.size = size;
-        this.fields = Array(size * size).fill({});
-
-        this.fields.forEach((field, index, fields) => {
-            fields[index] = new __WEBPACK_IMPORTED_MODULE_1__Field__["a" /* default */](undefined, undefined, undefined, undefined, undefined);
+        this.fields = Array(size * size).fill({}).map(() => {
+            return new __WEBPACK_IMPORTED_MODULE_1__Field__["a" /* default */](undefined, undefined, undefined, undefined, undefined)
         });
 
         const getCoordenate = (row, col) => {
@@ -399,10 +549,15 @@ class Environment {
 
             const callbackDrawNumber = (number) => {
                 let tempField = environment.fields[number];
-                if ((tempField.top === null || tempField.top.hold instanceof __WEBPACK_IMPORTED_MODULE_2__Trash__["a" /* default */]) &&
-                    (tempField.right === null || tempField.right.hold instanceof __WEBPACK_IMPORTED_MODULE_2__Trash__["a" /* default */]) &&
-                    (tempField.bottom === null || tempField.bottom.hold instanceof __WEBPACK_IMPORTED_MODULE_2__Trash__["a" /* default */]) &&
-                    (tempField.left === null || tempField.left.hold instanceof __WEBPACK_IMPORTED_MODULE_2__Trash__["a" /* default */])) {
+                if (
+                    (tempField.hold !== undefined) ||
+                    (
+                        (tempField.top === null || tempField.top.hold instanceof __WEBPACK_IMPORTED_MODULE_2__Trash__["a" /* default */]) &&
+                        (tempField.right === null || tempField.right.hold instanceof __WEBPACK_IMPORTED_MODULE_2__Trash__["a" /* default */]) &&
+                        (tempField.bottom === null || tempField.bottom.hold instanceof __WEBPACK_IMPORTED_MODULE_2__Trash__["a" /* default */]) &&
+                        (tempField.left === null || tempField.left.hold instanceof __WEBPACK_IMPORTED_MODULE_2__Trash__["a" /* default */])
+                    )
+                ) {
                     return tools.drawNumber(min, max, callbackDrawNumber);
                 }
 

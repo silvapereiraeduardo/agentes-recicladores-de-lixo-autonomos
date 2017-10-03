@@ -59,7 +59,7 @@ export default class Agent {
             return tempDrawNumberArray[number];
         };
 
-        if (agent.direction === undefined) {
+        if (agent.direction === undefined || !validateThisDirection(actualField, actualField[agent.direction])) {
             agent.direction = tools.drawNumber(min, tempMax, getAgentDirection);
             tempMax = max;
             tempDrawNumberArray = drawNumberArray;
