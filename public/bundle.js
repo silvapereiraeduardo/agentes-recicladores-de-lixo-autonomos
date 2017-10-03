@@ -85,6 +85,10 @@ class Tools {
 
 "use strict";
 class Trash {
+    /**
+     * Inicializa a Lixeira
+     * @param type - Tipo de Lixeira (Lixeira de lixo Origânico ou Seco)
+     */
     constructor(type) {
         this.type = type;
     }
@@ -98,6 +102,10 @@ class Trash {
 
 "use strict";
 class Dirt {
+    /**
+     * Inicializa o Lixo
+     * @param type - Tipo de Lixo (Origânico ou Seco)
+     */
     constructor(type) {
         this.type = type;
     }
@@ -312,6 +320,10 @@ __WEBPACK_IMPORTED_MODULE_2__vendor_jquery___default()(document).ready(() => {
 
 
 class Environment {
+    /**
+     * Inicializa o Ambiente criando os campos
+     * @param size - Tambanho do Ambiente
+     */
     constructor(size) {
         this.size = size;
         this.fields = Array(size * size).fill({});
@@ -350,18 +362,14 @@ class Environment {
                 right = fields[getCoordenate(row, col + 1)];
             }
 
-            // seta posiçoes no campo
-
             field.top = top;
             field.right = right;
             field.bottom = bottom;
             field.left = left;
 
-            // Controle de Row
             if (row < this.size && col === (this.size - 1)) {
                 row++;
             }
-            // Controle de Col
             if (col !== (this.size - 1)) {
                 col++;
             } else {
@@ -370,6 +378,9 @@ class Environment {
         });
     }
 
+    /**
+     * Insere Elementos no Ambiente
+     */
     populateEnvironment() {
         let environment = this;
         let numberOfFields = this.size * this.size;
@@ -378,7 +389,6 @@ class Environment {
         let numberOfGarbageTrash = Math.round((3 * numberOfFields) / 100);
         let numberOfOrganicDirt = Math.round((9 * numberOfFields) / 100);
         let numberOfGarbageDirt = Math.round((9 * numberOfFields) / 100);
-        let drawFild;
 
         const setHoldInField = (qtt, newObj, params) => {
             let tools = new __WEBPACK_IMPORTED_MODULE_0__lib_Tools__["a" /* default */]();
@@ -421,21 +431,33 @@ class Environment {
             }
         };
 
-        // seta as Lixeiras
+        /**
+         * Insere as Lixeiras de Lixo Orgânico
+         */
         setHoldInField(numberOfOrganicTrash, 'Trash', {
             param1: 'Lo'
         });
+        /**
+         * Insere as Lixeiras de Lixo Seco
+         */
         setHoldInField(numberOfGarbageTrash, 'Trash', {
             param1: 'Ls'
         });
-        // seta os Lixos
+        /**
+         * Insere os Lixos Orgânicos
+         */
         setHoldInField(numberOfOrganicDirt, 'Dirt', {
             param1: 'O'
         });
+        /**
+         * Insere os Lixos Secos
+         */
         setHoldInField(numberOfGarbageDirt, 'Dirt', {
             param1: 'S'
         });
-        // seta os Agents
+        /**
+         * Insere os Agentes
+         */
         setHoldInField(numberOfAgents, 'Agent', {
             param1: 1,
             param2: 1,
@@ -453,6 +475,14 @@ class Environment {
 
 "use strict";
 class Field {
+    /**
+     * Inicializa os Campos
+     * @param top - Instancia do Campo a cima ou valor Null caso não haja outro campo
+     * @param left - Instancia do Campo a esquerda ou valor Null caso não haja outro campo
+     * @param bottom - Instancia do Campo a baixo ou valor Null caso não haja outro campo
+     * @param right - Instancia do Campo a direita ou valor Null caso não haja outro campo
+     * @param hold - instacia do objeto presente do campo ou valor null caso esteja vazio o campo
+     */
     constructor(top, left, bottom, right, hold) {
         this.top = top;
         this.left = left;

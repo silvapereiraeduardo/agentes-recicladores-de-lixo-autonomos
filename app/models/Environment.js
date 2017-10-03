@@ -5,12 +5,14 @@ import Dirt from './Dirt';
 import Agent from './Agent';
 
 export default class Environment {
+    /**
+     * Inicializa o Ambiente criando os campos
+     * @param size - Tambanho do Ambiente
+     */
     constructor(size) {
         this.size = size;
-        this.fields = Array(size * size).fill({});
-
-        this.fields.forEach((field, index, fields) => {
-            fields[index] = new Field(undefined, undefined, undefined, undefined, undefined);
+        this.fields = Array(size * size).fill({}).map(() => {
+            return new Field(undefined, undefined, undefined, undefined, undefined)
         });
 
         const getCoordenate = (row, col) => {
@@ -43,18 +45,14 @@ export default class Environment {
                 right = fields[getCoordenate(row, col + 1)];
             }
 
-            // seta posiçoes no campo
-
             field.top = top;
             field.right = right;
             field.bottom = bottom;
             field.left = left;
 
-            // Controle de Row
             if (row < this.size && col === (this.size - 1)) {
                 row++;
             }
-            // Controle de Col
             if (col !== (this.size - 1)) {
                 col++;
             } else {
@@ -63,6 +61,9 @@ export default class Environment {
         });
     }
 
+    /**
+     * Insere Elementos no Ambiente
+     */
     populateEnvironment() {
         let environment = this;
         let numberOfFields = this.size * this.size;
@@ -71,7 +72,6 @@ export default class Environment {
         let numberOfGarbageTrash = Math.round((3 * numberOfFields) / 100);
         let numberOfOrganicDirt = Math.round((9 * numberOfFields) / 100);
         let numberOfGarbageDirt = Math.round((9 * numberOfFields) / 100);
-        let drawFild;
 
         const setHoldInField = (qtt, newObj, params) => {
             let tools = new Tools();
@@ -82,10 +82,15 @@ export default class Environment {
 
             const callbackDrawNumber = (number) => {
                 let tempField = environment.fields[number];
-                if ((tempField.top === null || tempField.top.hold instanceof Trash) &&
-                    (tempField.right === null || tempField.right.hold instanceof Trash) &&
-                    (tempField.bottom === null || tempField.bottom.hold instanceof Trash) &&
-                    (tempField.left === null || tempField.left.hold instanceof Trash)) {
+                if (
+                    (tempField.hold !== undefined) ||
+                    (
+                        (tempField.top === null || tempField.top.hold instanceof Trash) &&
+                        (tempField.right === null || tempField.right.hold instanceof Trash) &&
+                        (tempField.bottom === null || tempField.bottom.hold instanceof Trash) &&
+                        (tempField.left === null || tempField.left.hold instanceof Trash)
+                    )
+                ) {
                     return tools.drawNumber(min, max, callbackDrawNumber);
                 }
 
@@ -114,21 +119,33 @@ export default class Environment {
             }
         };
 
-        // seta as Lixeiras
+        /**
+         * Insere as Lixeiras de Lixo Orgânico
+         */
         setHoldInField(numberOfOrganicTrash, 'Trash', {
             param1: 'Lo'
         });
+        /**
+         * Insere as Lixeiras de Lixo Seco
+         */
         setHoldInField(numberOfGarbageTrash, 'Trash', {
             param1: 'Ls'
         });
-        // seta os Lixos
+        /**
+         * Insere os Lixos Orgânicos
+         */
         setHoldInField(numberOfOrganicDirt, 'Dirt', {
             param1: 'O'
         });
+        /**
+         * Insere os Lixos Secos
+         */
         setHoldInField(numberOfGarbageDirt, 'Dirt', {
             param1: 'S'
         });
-        // seta os Agents
+        /**
+         * Insere os Agentes
+         */
         setHoldInField(numberOfAgents, 'Agent', {
             param1: 1,
             param2: 1,

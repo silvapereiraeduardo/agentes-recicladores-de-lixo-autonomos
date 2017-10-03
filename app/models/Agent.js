@@ -3,6 +3,13 @@ import Trash from './Trash';
 import Dirt from "./Dirt";
 
 export default class Agent {
+    /**
+     * Incializa o Agente
+     * @param capacityOfOrganicDirt - Capacidade de lixos Orgânicos
+     * @param capacityOfGarbageDirt - Capacidade de lixos Secos
+     * @param slotOrganicDirt - Quantidade de lixos Orgânicos
+     * @param slotDryDirt - Quantidade de lixos Secos
+     */
     constructor(capacityOfOrganicDirt, capacityOfGarbageDirt, slotOrganicDirt, slotDryDirt) {
         this.capacityOfOrganicDirt = capacityOfOrganicDirt;
         this.capacityOfGarbageDirt = capacityOfGarbageDirt;
@@ -12,63 +19,153 @@ export default class Agent {
         this.cycle = 0;
     }
 
-    walk(field) {
+    lookAround(actualField) {
+        // debugger;
         let tools = new Tools();
         let drawNumberArray = ['top', 'right', 'bottom', 'left'];
-        let newField = field;
-        let agent = newField.hold;
+        let tempDrawNumberArray = drawNumberArray;
         let min = 0;
         let max = 3;
+        let tempMax = max;
+        let agent = actualField.hold;
+        let drawDirection;
+        let test = false;
+        const validateThisDirection = (field, direction) => {
+            let isValid = true;
 
-        const callbackDrawNumber = (number) => {
-            if (!field[drawNumberArray[number]]) {
-                return tools.drawNumber(min, max, callbackDrawNumber);
-            } else {
-                return drawNumberArray[number];
+            if (field[direction] === null ||
+                (
+                    field[direction] &&
+                    field[direction].hold &&
+                    (
+                        field[direction].hold instanceof Trash ||
+                        field[direction].hold instanceof Agent
+                    )
+                )
+            ) {
+                isValid = false;
             }
+
+            return isValid;
+        };
+        const getAgentDirection = number => {
+            if (!validateThisDirection(actualField, actualField[tempDrawNumberArray[number]])) {
+                tempMax--;
+                tempDrawNumberArray = tempDrawNumberArray.filter((item, index) => {
+                    return index !== number;
+                });
+                return tools.drawNumber(min, tempMax, getAgentDirection);
+            }
+            return tempDrawNumberArray[number];
         };
 
-        if (agent.direction !== null) {
-            agent.direction = tools.drawNumber(min, max, callbackDrawNumber);
+        if (agent.direction === undefined) {
+            agent.direction = tools.drawNumber(min, tempMax, getAgentDirection);
+            tempMax = max;
+            tempDrawNumberArray = drawNumberArray;
         }
 
-        if (field[agent.direction].hold instanceof Dirt) {
-            if (field[agent.direction].hold.type === 'O' && agent.slotOrganicDirt.length < agent.capacityOfOrganicDirt) {
-                agent.slotOrganicDirt.push(field[agent.direction].hold);
-                field[agent.direction].hold = agent;
-                newField = field[agent.direction];
-                field.hold = null;
-            }
-            if (field[agent.direction].hold.type === 'S' && agent.slotDryDirt.length < agent.capacityOfGarbageDirt) {
-                agent.slotDryDirt.push(field[agent.direction].hold);
-                field[agent.direction].hold = agent;
-                newField = field[agent.direction];
-                field.hold = null;
-            }
-        }
+        do {
+            drawDirection = tools.drawNumber(min, tempMax, number => {
+                return tempDrawNumberArray[number];
+            });
 
-        if (field[agent.direction].hold instanceof Trash) {
-            if (field[agent.direction].hold.type === 'Lo' && agent.slotOrganicDirt.length === agent.capacityOfOrganicDirt) {
-                agent.slotOrganicDirt = [];
-            }
-            if (field[agent.direction].hold.type === 'Ls' && agent.slotDryDirt.length === agent.capacityOfGarbageDirt) {
-                agent.slotDryDirt = [];
-            }
-        }
+            tempDrawNumberArray = tempDrawNumberArray.filter(item => {
+                return item !== drawDirection;
+            });
 
-        if (field[agent.direction].hold === undefined) {
-            field[agent.direction].hold = agent;
-            newField = field[agent.direction];
-            field.hold = null;
-        }
+            test = agent.verifyDirection(agent, actualField, drawDirection);
 
-        if (agent.cycle < 2) {
-            agent.cycle = agent.cycle + 1;
+            tempMax--;
+        } while (tempDrawNumberArray.length !== 0 && !test);
+
+        tempMax = max;
+        tempDrawNumberArray = drawNumberArray;
+
+        if (!test) {
+            if (agent.cycle < 2) {
+                agent.cycle = agent.cycle + 1;
+                agent.walk(actualField, actualField[agent.direction]);
+            } else {
+                agent.direction = undefined;
+                agent.cycle = 0;
+            }
         } else {
             agent.direction = undefined;
             agent.cycle = 0;
         }
+    }
 
-        return newField;
+    /**
+     * Caminha com o Agente
+     * @param actualField - Campo do qual se encontra o Agente
+     * @returns {field} - Campo do qual se encontra o Agente
+     */
+    verifyDirection(agent, actualField, direction) {
+        // debugger;
+        let tempField;
+        let isValid = false;
+
+        if (actualField[direction] === null) {
+            return isValid;
+        }
+
+        for (let i = 0; i < 2; i++) {
+            if (i === 0) {
+                tempField = actualField[direction];
+            }
+            if (i === 1 && actualField[direction][direction] !== null) {
+                tempField = actualField[direction][direction]
+            }
+
+            if (tempField.hold instanceof Dirt) {
+                if (tempField.hold.type === 'O' && agent.slotOrganicDirt.length < agent.capacityOfOrganicDirt) {
+                    agent.slotOrganicDirt.push(tempField.hold);
+                    agent.walk(actualField, tempField);
+                    isValid = true;
+                    break;
+                }
+                if (tempField.hold.type === 'S' && agent.slotDryDirt.length < agent.capacityOfGarbageDirt) {
+                    agent.slotDryDirt.push(tempField.hold);
+                    agent.walk(actualField, tempField);
+                    isValid = true;
+                    break;
+                }
+            }
+
+            if (tempField.hold instanceof Dirt) {
+                if (tempField.hold.type === 'O' && agent.slotOrganicDirt.length < agent.capacityOfOrganicDirt) {
+                    agent.slotOrganicDirt.push(tempField.hold);
+                    agent.walk(actualField, tempField);
+                    isValid = true;
+                    break;
+                }
+                if (tempField.hold.type === 'S' && agent.slotDryDirt.length < agent.capacityOfGarbageDirt) {
+                    agent.slotDryDirt.push(tempField.hold);
+                    agent.walk(actualField, tempField);
+                    isValid = true;
+                    break;
+                }
+            }
+
+            if (tempField.hold instanceof Trash) {
+                if (tempField.hold.type === 'Lo' && agent.slotOrganicDirt.length === agent.capacityOfOrganicDirt) {
+                    agent.slotOrganicDirt = [];
+                    break;
+                }
+                if (tempField.hold.type === 'Ls' && agent.slotDryDirt.length === agent.capacityOfGarbageDirt) {
+                    agent.slotDryDirt = [];
+                    break;
+                }
+            }
+        }
+
+        return isValid;
+    }
+
+    walk(oldField, nextField) {
+        oldField.hold = this;
+        nextField.hold = oldField.hold;
+        oldField.hold = null;
     }
 };
