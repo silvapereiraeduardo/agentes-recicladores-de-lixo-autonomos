@@ -1,6 +1,7 @@
 import $ from 'jquery';
 
-let tam = 8;
+let tam;
+let velocidade;
 let lixeirasOrg = Array();
 let lixeirasSec = Array();
 let lixosOrg = Array();
@@ -15,10 +16,85 @@ let direcaoAtual = null;
 let trocaAgente = false;
 let contDirecoes = 0;
 let controleCiclo = Array();
+let intervaloTempo;
+
+const validaPosicao = (linha, coluna) => {
+    let test = false;
+    let posicoesValidas = 0;
+
+    if (ambiente[linha][coluna] === '') {
+        if (linha !== 0 && ambiente[linha - 1][coluna] === '') {
+            posicoesValidas++;
+        }
+        if (linha !== tam - 1 && ambiente[linha + 1][coluna] === '') {
+            posicoesValidas++;
+        }
+        if (coluna !== 0 && ambiente[linha][coluna - 1] === '') {
+            posicoesValidas++;
+        }
+        if (coluna !== tam - 1 && ambiente[linha][coluna + 1] === '') {
+            posicoesValidas++;
+        }
+    }
+
+    if (posicoesValidas !== 0) {
+        test = true;
+    }
+
+    return test;
+};
+
+const getRandomIntInclusive = (min, max) => {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+};
 
 // cria ambiente
-const criaAmbiente = () => {
+const criaAmbiente = (tam) => {
+    let test;
     let i, j;
+    let linha;
+    let coluna;
+    let obj;
+    let criador = [
+        {
+            'id': 'Lo',
+            'qtd': Math.round((((1 * 100) / (8 * 8)) * (tam * tam)) / 100)
+        },
+        {
+            'id': 'Ls',
+            'qtd': Math.round((((1 * 100) / (8 * 8)) * (tam * tam)) / 100)
+        },
+        {
+            'id': 'O',
+            'qtd': Math.round((((6 * 100) / (8 * 8)) * (tam * tam)) / 100)
+        },
+        {
+            'id': 'S',
+            'qtd': Math.round((((6 * 100) / (8 * 8)) * (tam * tam)) / 100)
+        },
+        {
+            'id': 'A',
+            'qtd': Math.round((((2 * 100) / (8 * 8)) * (tam * tam)) / 100)
+        }
+
+    ];
+
+    lixeirasOrg = Array();
+    lixeirasSec = Array();
+    lixosOrg = Array();
+    lixosSec = Array();
+    agentes = Array();
+    ambiente = Array();
+    passo = null;
+    agenteAtual = null;
+    origemAgenteAtual = null;
+    direcaoAtual = null;
+    trocaAgente = false;
+    contDirecoes = 0;
+    controleCiclo = Array();
+
     for (i = 0; i < tam; i++) {
         ambiente.push(Array());
         for (j = 0; j < tam; j++) {
@@ -26,72 +102,42 @@ const criaAmbiente = () => {
         }
     }
 
-    criaLixeiras();
-    criaLixos();
-    criaAgentes();
-};
+    criador.forEach((item) => {
+        for (j = 0; j < item['qtd']; j++) {
+            do {
+                linha = getRandomIntInclusive(0, tam - 1);
+                coluna = getRandomIntInclusive(0, tam - 1);
+                test = validaPosicao(linha, coluna);
+            } while (!test);
 
-// cria lixeiras
-// TODO: criar lixeiras dinâmicamente
-const criaLixeiras = () => {
-    ambiente[0][0] = 'Lo';
-    lixeirasOrg.push({'posicao': {linha: 0, coluna: 0}});
-    ambiente[0][7] = 'Ls';
-    lixeirasSec.push({'posicao': {linha: 0, coluna: 7}});
-};
+            ambiente[linha][coluna] = item['id'];
+            if (item['id'] !== 'A') {
+                obj = {'posicao': {linha: linha, coluna: coluna}};
+            } else {
+                obj = {
+                    'posicao': {linha: linha, coluna: coluna},
+                    'qtdLixosOrg': 0,
+                    'qtdLixosSec': 0
+                };
 
-// cria lixos
-// TODO: criar lixos dinâmicamente
-const criaLixos = () => {
-    ambiente[1][1] = 'O';
-    lixosOrg.push({'posicao': {linha: 1, coluna: 1}});
-    ambiente[2][2] = 'O';
-    lixosOrg.push({'posicao': {linha: 2, coluna: 2}});
-    ambiente[2][3] = 'O';
-    lixosOrg.push({'posicao': {linha: 2, coluna: 3}});
-    ambiente[6][7] = 'O';
-    lixosOrg.push({'posicao': {linha: 6, coluna: 7}});
-    ambiente[5][2] = 'O';
-    lixosOrg.push({'posicao': {linha: 5, coluna: 2}});
-    ambiente[3][4] = 'O';
-    lixosOrg.push({'posicao': {linha: 3, coluna: 4}});
-    ambiente[2][7] = 'S';
-    lixosSec.push({'posicao': {linha: 2, coluna: 7}});
-    ambiente[7][2] = 'S';
-    lixosSec.push({'posicao': {linha: 7, coluna: 2}});
-    ambiente[0][5] = 'S';
-    lixosSec.push({'posicao': {linha: 0, coluna: 5}});
-    ambiente[5][0] = 'S';
-    lixosSec.push({'posicao': {linha: 5, coluna: 0}});
-    ambiente[0][6] = 'S';
-    lixosSec.push({'posicao': {linha: 0, coluna: 6}});
-    ambiente[6][6] = 'S';
-    lixosSec.push({'posicao': {linha: 6, coluna: 6}});
-};
+                controleCiclo.push({
+                    'ciclo': 0,
+                    'direcao': direcoes[0]
+                });
+            }
 
-// cria agentes
-// TODO: criar agentes dinâmicamente
-const criaAgentes = () => {
-    ambiente[3][3] = 'A';
-    agentes.push({
-        'posicao': {linha: 3, coluna: 3},
-        'qtdLixosOrg': 0,
-        'qtdLixosSec': 0
-    });
-    controleCiclo.push({
-        'ciclo': 0,
-        'direcao': direcoes[0]
-    });
-
-    ambiente[5][5] = 'A';
-    agentes.push({
-        'posicao': {linha: 5, coluna: 5},
-        'qtdLixosOrg': 0,
-        'qtdLixosSec': 0
-    });
-    controleCiclo.push({
-        'ciclo': 0,
-        'direcao': direcoes[0]
+            if (item['id'] === 'Lo') {
+                lixeirasOrg.push(obj);
+            } else if (item['id'] === 'Ls') {
+                lixeirasSec.push(obj);
+            } else if (item['id'] === 'S') {
+                lixosSec.push(obj);
+            } else if (item['id'] === 'O') {
+                lixosOrg.push(obj);
+            } else {
+                agentes.push(obj);
+            }
+        }
     });
 };
 
@@ -373,19 +419,32 @@ const pegaProximaPosicao = (agente) => {
 const mostraAmbiente = () => {
     let element = $('#app');
     let content;
+    let i, j;
+    let agenteIndex = 0;
 
     console.log('-- mostraAmbiente --');
     console.log(ambiente);
 
     element.empty();
     content = "<table><tbody>";
-    ambiente.forEach(item => {
+
+    for (i = 0; i < ambiente.length; i++) {
         content += "<tr>";
-        item.forEach(value => {
-            content += "<td class='" + value + "'>" + value + "</td>";
-        });
+        for (j = 0; j < ambiente.length; j++) {
+            if (ambiente[i][j] === 'A') {
+                agentes.forEach((agente, index) => {
+                    if (agente['posicao']['linha'] === i && agente['posicao']['coluna'] === j) {
+                        agenteIndex = index + 1;
+                    }
+                });
+                content += "<td class='" + ambiente[i][j] + "'>" + ambiente[i][j] + agenteIndex + "</td>";
+            } else {
+                content += "<td class='" + ambiente[i][j] + "'>" + ambiente[i][j] + "</td>";
+            }
+        }
         content += "</tr>";
-    });
+    }
+
     content += "</tbody></table>";
     element.append(content);
 
@@ -396,28 +455,23 @@ const mostraAmbiente = () => {
     element.empty();
     content = "<table><tbody>";
 
-    content += "<tr>";
-    content += "<td class='titulo' colspan='2'>Lixos Orgânicos</td>";
-    content += "</tr>";
+    content += "<tr><td class='titulo' colspan='2'>Lixos Orgânicos</td></tr>";
     content += "<tr><td colspan='2'>" + lixosOrg.length + "</td></tr>";
 
-    content += "<tr>";
-    content += "<td class='titulo' colspan='2'>Lixos Secos</td>";
-    content += "</tr>";
+    content += "<tr><td class='titulo' colspan='2'>Lixos Secos</td></tr>";
     content += "<tr><td colspan='2'>" + lixosSec.length + "</td></tr>";
 
-    content += "<tr>";
-    content += "<td class='titulo' colspan='2'>Passo</td>";
-    content += "</tr>";
-    content += "<tr><td colspan='2'>" + passo + "</td></tr>";
+    content += "<tr><td class='titulo' colspan='2'>Passo</td></tr>";
+    content += "<tr><td colspan='2'>" + (passo === null ? 0 : passo) + "</td></tr>";
+
+    content += "<tr><td class='titulo' colspan='2'>Direção Atual</td></tr>";
+    content += "<tr><td colspan='2'>" + (direcaoAtual === null ? 'Sem Direção' : direcaoAtual) + "</td></tr>";
 
     agentes.forEach((agente, index) => {
-        content += "<tr>";
-        content += "<td class='titulo' colspan='2'>Agente " + (index + 1) + "</td>";
-        content += "</tr>";
+        content += "<tr><td class='titulo' colspan='2'>Agente " + (index + 1) + "</td></tr>";
         content += "<tr>";
         content += "<td>Posição</td>";
-        content += "<td>Linha: " + agente['posicao']['linha'] + "<br>Coluna: " + agente['posicao']['linha'] + "</td>";
+        content += "<td>Linha: " + agente['posicao']['linha'] + "<br>Coluna: " + agente['posicao']['coluna'] + "</td>";
         content += "</tr>";
         content += "<tr>";
         content += "<td>Quantidade de lixos</td>";
@@ -435,6 +489,12 @@ const mostraAmbiente = () => {
 
 // proximo Passo
 const proximoPasso = () => {
+    if (lixosOrg.length === 0 && lixosSec === 0) {
+        clearInterval(intervaloTempo);
+        window.alert('Não à mais lixos a serem recolhidos!');
+        return;
+    }
+
     console.log('--- proximoPasso ---');
 
     if (trocaAgente) {
@@ -529,10 +589,20 @@ const proximoPasso = () => {
     mostraAmbiente();
 };
 
-const inicializa = () => {
-    criaAmbiente();
-    mostraAmbiente();
+const iniciaPassos = () => {
+    intervaloTempo = setInterval(proximoPasso, velocidade);
 };
 
-inicializa();
+$(document).ready(() => {
+    $('#config-ambiente').on('submit', (e) => {
+        e.preventDefault();
+        tam = $('#config-ambiente')[0].elements.tam.value;
+        velocidade = $('#config-ambiente')[0].elements.velocidade.value;
+
+        criaAmbiente(tam);
+        mostraAmbiente();
+    });
+});
+
 window.proximoPasso = proximoPasso;
+window.iniciaPassos = iniciaPassos;
