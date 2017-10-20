@@ -1,17 +1,58 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Agentes Recicladores De Lixo Autônomos</title>
-    <link rel="stylesheet" type="text/css" href="style.css" />
-  </head>
-  <body>
-  <h1>Agentes Recicladores De Lixo Autônomos</h1>
-    <div id="app">
-    </div>
-    <button type="button" name="button" class="btn" onclick="window.proximoPasso()">Proximo</button>
-    <script type="text/javascript" src="app.js"></script>
-  </body>
+        <title>Agentes Recicladores De Lixo Autônomos</title>
+        <link rel="stylesheet" type="text/css" href="style.css"/>
+    </head>
+    <body>
+        <h1>Agentes Recicladores De Lixo Autônomos</h1>
+        <form id="config-ambiente" name="ambiente" method="POST" action="#">
+            <table>
+                <tbody>
+                <tr>
+                    <td>
+                        <label>Tamanho do Ambiente</label>
+                        <br>
+                        <select name="tam">
+                            <option value="8">8x8 (2x A, 2x Lo, 2x Ls, 6x O, 6x S)</option>
+                            <option value="12">12x12 (4x A, 4x Lo, 4x Ls, 13x O, 13x S)</option>
+                            <option value="16">16x16 (8x A, 8x Lo, 8x Ls, 23x O, 23x S)</option>
+                        </select>
+                    </td>
+                    <td>
+                        <label>Velocidade</label>
+                        <br>
+                        <select name="velocidade">
+                            <option value="2000">1x</option>
+                            <option value="1000">2x</option>
+                            <option value="500">3x</option>
+                        </select>
+                    </td>
+                    <td>
+                        <button type="submit" class="btn">Gerar</button>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </form>
+
+        <table id="ambiente">
+            <tbody>
+                <tr>
+                    <td>
+                        <div id="app"></div>
+                        <button type="button" id="proximo-passo" name="button" class="btn" onclick="window.proximoPasso()">Proximo</button>
+                    </td>
+                    <td>
+                        <div id="painel"></div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <script type="text/javascript" src="app.js"></script>
+    </body>
 </html>

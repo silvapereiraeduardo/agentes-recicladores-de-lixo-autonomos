@@ -1,19 +1,46 @@
 body {
     text-align: center;
 }
-table {
+
+#config-ambiente table,
+#config-ambiente table td {
+    border: 0;
+    text-align: left;
+    padding-right: 15px;
+}
+
+body table {
     margin: 15px auto;
 }
-table,
-table td {
+
+#ambiente > tbody > tr > td {
+    min-width: 300px;
+    vertical-align: baseline;
+    padding: 0;
+}
+
+#app table,
+#app table td {
     border: 1px solid #000;
 }
-table td {
+
+#app table td {
     height: 25px;
     width: 25px;
     text-align: center;
     vertical-align: middle;
 }
+
+#painel table {
+    margin: 0;
+    width: 100%;
+    text-align: center;
+}
+
+#painel .titulo {
+    font-weight: bold;
+}
+
 .A {
     background: #ea2b2b;
     color: #fff;
@@ -40,7 +67,8 @@ table td {
 }
 
 .btn {
-    padding: 10px 15px;
+    padding: 7px 15px;
+    margin-top: 15px;
     background: #096ac7;
     color: #ffffff;
     border-radius: 7px;
@@ -51,4 +79,8 @@ table td {
 .btn:focus,
 .btn:active {
     background-color: #07427b;
+}
+
+#proximo-passo {
+    margin: 0 auto;
 }

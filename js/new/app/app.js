@@ -25,6 +25,10 @@ const criaAmbiente = () => {
             ambiente[i].push('');
         }
     }
+
+    criaLixeiras();
+    criaLixos();
+    criaAgentes();
 };
 
 // cria lixeiras
@@ -61,8 +65,6 @@ const criaLixos = () => {
     lixosSec.push({'posicao': {linha: 5, coluna: 0}});
     ambiente[0][6] = 'S';
     lixosSec.push({'posicao': {linha: 0, coluna: 6}});
-    ambiente[6][0] = 'S';
-    lixosSec.push({'posicao': {linha: 6, coluna: 0}});
     ambiente[6][6] = 'S';
     lixosSec.push({'posicao': {linha: 6, coluna: 6}});
 };
@@ -386,6 +388,49 @@ const mostraAmbiente = () => {
     });
     content += "</tbody></table>";
     element.append(content);
+
+    // mostra painel
+    element = $('#painel');
+    content = '';
+
+    element.empty();
+    content = "<table><tbody>";
+
+    content += "<tr>";
+    content += "<td class='titulo' colspan='2'>Lixos Orgânicos</td>";
+    content += "</tr>";
+    content += "<tr><td colspan='2'>" + lixosOrg.length + "</td></tr>";
+
+    content += "<tr>";
+    content += "<td class='titulo' colspan='2'>Lixos Secos</td>";
+    content += "</tr>";
+    content += "<tr><td colspan='2'>" + lixosSec.length + "</td></tr>";
+
+    content += "<tr>";
+    content += "<td class='titulo' colspan='2'>Passo</td>";
+    content += "</tr>";
+    content += "<tr><td colspan='2'>" + passo + "</td></tr>";
+
+    agentes.forEach((agente, index) => {
+        content += "<tr>";
+        content += "<td class='titulo' colspan='2'>Agente " + (index + 1) + "</td>";
+        content += "</tr>";
+        content += "<tr>";
+        content += "<td>Posição</td>";
+        content += "<td>Linha: " + agente['posicao']['linha'] + "<br>Coluna: " + agente['posicao']['linha'] + "</td>";
+        content += "</tr>";
+        content += "<tr>";
+        content += "<td>Quantidade de lixos</td>";
+        content += "<td>Orgânicos: " + agente['qtdLixosOrg'] + "<br>Secos: " + agente['qtdLixosSec'] + "</td>";
+        content += "</tr>";
+        content += "<tr>";
+        content += "<td>Controle de Ciclo</td>";
+        content += "<td>Ciclo: " + controleCiclo[index]['ciclo'] + "<br>Direção: " + controleCiclo[index]['direcao'] + "</td>";
+        content += "</tr>";
+    });
+
+    content += "</tbody></table>";
+    element.append(content);
 };
 
 // proximo Passo
@@ -486,9 +531,6 @@ const proximoPasso = () => {
 
 const inicializa = () => {
     criaAmbiente();
-    criaLixeiras();
-    criaLixos();
-    criaAgentes();
     mostraAmbiente();
 };
 
