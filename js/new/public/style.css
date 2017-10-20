@@ -1,0 +1,54 @@
+body {
+    text-align: center;
+}
+table {
+    margin: 15px auto;
+}
+table,
+table td {
+    border: 1px solid #000;
+}
+table td {
+    height: 25px;
+    width: 25px;
+    text-align: center;
+    vertical-align: middle;
+}
+.A {
+    background: #ea2b2b;
+    color: #fff;
+}
+
+.Lo {
+    background: #662A20;
+    color: #fff;
+}
+
+.Ls {
+    background: #34A160;
+    color: #fff;
+}
+
+.O {
+    background: #924f44;
+    color: #fff;
+}
+
+.S {
+    background: #4aaf73;
+    color: #fff;
+}
+
+.btn {
+    padding: 10px 15px;
+    background: #096ac7;
+    color: #ffffff;
+    border-radius: 7px;
+    border: 0;
+}
+
+.btn:hover,
+.btn:focus,
+.btn:active {
+    background-color: #07427b;
+}
