@@ -241,10 +241,10 @@ const andaAgente = (direcaoAtual) => {
                             agentes[agenteAtual]['qtdLixosSec']++;
                             moveAgenteParaBaixo(agenteLinha, agenteColuna);
                             trocaAgente = true;
-                        } else if (ambiente[agenteLinha + 1][agenteColuna] === 'lo' && agentes[agenteAtual]['qtdLixosOrg'] === 3) {
+                        } else if (ambiente[agenteLinha + 1][agenteColuna] === 'Lo' && agentes[agenteAtual]['qtdLixosOrg'] === 3) {
                             agentes[agenteAtual]['qtdLixosOrg'] = 0;
                             trocaAgente = true;
-                        } else if (ambiente[agenteLinha + 1][agenteColuna] === 'ls' && agentes[agenteAtual]['qtdLixosSec'] === 3) {
+                        } else if (ambiente[agenteLinha + 1][agenteColuna] === 'Ls' && agentes[agenteAtual]['qtdLixosSec'] === 3) {
                             agentes[agenteAtual]['qtdLixosSec'] = 0;
                             trocaAgente = true;
                         } else {
@@ -270,10 +270,10 @@ const andaAgente = (direcaoAtual) => {
                             agentes[agenteAtual]['qtdLixosSec']++;
                             moveAgenteParaDireita(agenteLinha, agenteColuna);
                             trocaAgente = true;
-                        } else if (ambiente[agenteLinha][agenteColuna + 1] === 'lo' && agentes[agenteAtual]['qtdLixosOrg'] === 3) {
+                        } else if (ambiente[agenteLinha][agenteColuna + 1] === 'Lo' && agentes[agenteAtual]['qtdLixosOrg'] === 3) {
                             agentes[agenteAtual]['qtdLixosOrg'] = 0;
                             trocaAgente = true;
-                        } else if (ambiente[agenteLinha][agenteColuna + 1] === 'ls' && agentes[agenteAtual]['qtdLixosSec'] === 3) {
+                        } else if (ambiente[agenteLinha][agenteColuna + 1] === 'Ls' && agentes[agenteAtual]['qtdLixosSec'] === 3) {
                             agentes[agenteAtual]['qtdLixosSec'] = 0;
                             trocaAgente = true;
                         } else {
@@ -299,10 +299,10 @@ const andaAgente = (direcaoAtual) => {
                             agentes[agenteAtual]['qtdLixosSec']++;
                             moveAgenteParaEsquerda(agenteLinha, agenteColuna);
                             trocaAgente = true;
-                        } else if (ambiente[agenteLinha][agenteColuna - 1] === 'lo' && agentes[agenteAtual]['qtdLixosOrg'] === 3) {
+                        } else if (ambiente[agenteLinha][agenteColuna - 1] === 'Lo' && agentes[agenteAtual]['qtdLixosOrg'] === 3) {
                             agentes[agenteAtual]['qtdLixosOrg'] = 0;
                             trocaAgente = true;
-                        } else if (ambiente[agenteLinha][agenteColuna - 1] === 'ls' && agentes[agenteAtual]['qtdLixosSec'] === 3) {
+                        } else if (ambiente[agenteLinha][agenteColuna - 1] === 'Ls' && agentes[agenteAtual]['qtdLixosSec'] === 3) {
                             agentes[agenteAtual]['qtdLixosSec'] = 0;
                             trocaAgente = true;
                         } else {
@@ -408,6 +408,8 @@ const pegaProximaPosicao = (agente) => {
             }
             return test;
         });
+
+        console.log('direcoesPossiveis', direcoesPossiveis);
 
         novaDirecao = direcoesPossiveis[Math.floor(Math.random() * direcoesPossiveis.length)];
     }
