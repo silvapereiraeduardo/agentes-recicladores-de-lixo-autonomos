@@ -1,12 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
+    <meta
+      http-equiv="Cache-Control"
+      content="no-cache, no-store, must-revalidate"
+    />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Document</title>
-</head>
-<body>
-    <h1>Hello World!</h1>
-</body>
+    <style></style>
+  </head>
+  <body>
+    <div id="playground-container">
+      <canvas id="playground-canvas"></canvas>
+      <table id="score-table"></table>
+    </div>
+    <script>
+      let playground = null;
+      const scoreTable = document.getElementById("score-table");
+      const playgroundCanvas = document.getElementById("playground-canvas");
+    </script>
+  </body>
 </html>
